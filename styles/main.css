@@ -18,3 +18,22 @@ footer{
     background-color: lightgrey;
     height: 50px;
 }
+
+#text{
+    float:left;
+    font-size: 30px;
+    text-align: center;
+    width: 700px;
+    background-image: image(images/obraz.jpg);
+
+}
+
+#obraz{
+
+    float:right;
+    padding: 10px;
+
+}
+.opis{
+    clear: both;
+}
