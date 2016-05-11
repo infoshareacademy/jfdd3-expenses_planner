@@ -3,18 +3,56 @@
     padding: 0;
 }
 
+body {
+    width:1000px;
+    margin:auto;
+    border-left: 2px solid darkblue;
+    border-right: 2px solid darkblue;
+}
+
 header{
+    height: 160px;
     background-color: lightgrey;
     border-bottom: solid 5px darkblue;
+
 }
 
 main{
     background-color: lightblue;
-    height: 500px;
+    height: 800px;
 }
 
 footer{
     border-top: solid 5px darkblue;
     background-color: lightgrey;
-    height: 50px;
+    height: 200px;
+}
+
+header ul li a {
+    padding: 20px;
+    border: solid red 1px;
+    border-radius: 10px;
+    background-color: darkslategrey;
+    color:white;
+    text-decoration: none;
+}
+
+ul {display: inline-block;
+    float: right;
+    margin-top: 120px;
+    margin-right: 10px;
+}
+
+li{
+    display: inline-block;
+
+}
+
+img {
+    float: left;
+}
+
+a:hover {
+    background-color: white;
+    color:darkgrey;
 }
