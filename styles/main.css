@@ -11,13 +11,16 @@ body {
 }
 
 header{
-    height: 160px;
+    height: 110px;
+    width: 1000px;
     background-color: lightgrey;
     border-bottom: solid 5px darkblue;
-
+    position: fixed;
+    top:0;
 }
 
 main{
+    margin-top: 110px;
     background-color: lightblue;
     height: 800px;
 }
@@ -39,8 +42,8 @@ header ul li a {
 
 ul {display: inline-block;
     float: right;
-    margin-top: 120px;
     margin-right: 10px;
+    margin-top: 60px;
 }
 
 li{
