@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+.clear {
+    clear: both;
+}
+
+#zajawka {
+    margin-top: 110px;
+}
+
 body {
     width:1000px;
     margin:auto;
@@ -18,11 +26,11 @@ header{
     position: fixed;
     top:0;
 }
-
+/*Poprawić kwestię ustawienia MAIN po kliknięciu w link*/
 main{
-    padding-top: 110px;
     background-color: lightblue;
     height: 800px;
+    padding-top: 110px;
 }
 
 footer{
