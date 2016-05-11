@@ -3,3 +3,18 @@
     padding: 0;
 }
 
+header{
+    background-color: lightgrey;
+    border-bottom: solid 5px darkblue;
+}
+
+main{
+    background-color: lightblue;
+    height: 500px;
+}
+
+footer{
+    border-top: solid 5px darkblue;
+    background-color: lightgrey;
+    height: 50px;
+}
