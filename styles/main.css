@@ -7,15 +7,15 @@
     clear: both;
 }
 
-#zajawka {
-    margin-top: 110px;
-}
-
 body {
     width:1000px;
-    margin:auto;
+    margin: 0 auto;
     border-left: 2px solid darkblue;
     border-right: 2px solid darkblue;
+}
+
+#zajawka {
+    padding-top: 110px;
 }
 
 header{
@@ -30,7 +30,6 @@ header{
 main{
     background-color: lightblue;
     height: 800px;
-    padding-top: 110px;
 }
 
 footer{
