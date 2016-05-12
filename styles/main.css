@@ -7,29 +7,34 @@
     clear: both;
 }
 
-body {
-    width:1000px;
-    margin: 0 auto;
-    border-left: 2px solid darkblue;
-    border-right: 2px solid darkblue;
+#zajawka {
+    margin-top: 110px;
+    position: relative;
+
 }
 
-#zajawka {
-    padding-top: 110px;
+body {
+    width:1000px;
+    margin:auto;
+    border-left: 2px solid darkblue;
+    border-right: 2px solid darkblue;
 }
 
 header{
     height: 110px;
     width: 1000px;
-    background-color: lightgrey;
+    background-color: white;
     border-bottom: solid 5px darkblue;
     position: fixed;
     top:0;
+    z-index: 1;
 }
 /*Poprawić kwestię ustawienia MAIN po kliknięciu w link*/
 main{
     background-color: lightblue;
     height: 800px;
+    padding-top: 110px;
+
 }
 
 footer{
