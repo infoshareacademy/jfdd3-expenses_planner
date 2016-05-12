@@ -7,17 +7,15 @@
     clear: both;
 }
 
-#zajawka {
-    margin-top: 110px;
-    position: relative;
-
-}
-
 body {
-    width:1000px;
-    margin:auto;
+
+    margin: 0 auto;
     border-left: 2px solid darkblue;
     border-right: 2px solid darkblue;
+}
+
+#zajawka {
+    padding-top: 110px;
 }
 
 header{
@@ -27,14 +25,11 @@ header{
     border-bottom: solid 5px darkblue;
     position: fixed;
     top:0;
-    z-index: 1;
 }
 /*Poprawić kwestię ustawienia MAIN po kliknięciu w link*/
 main{
-    background-color: lightblue;
+    background-color: white;
     height: 800px;
-    padding-top: 110px;
-
 }
 
 footer{
@@ -46,21 +41,27 @@ footer{
 
 header ul li a {
     padding: 20px;
-    border: solid red 1px;
     border-radius: 10px;
-    background-color: darkslategrey;
-    color:white;
+    background-color:white;
+    color:lightgrey;
     text-decoration: none;
+    font-family:NanumGothic;
+    font-weight: 700;
+
+
+
 }
 
 ul {display: inline-block;
     float: right;
     margin-right: 10px;
-    margin-top: 60px;
+    margin-top: 90px;
 }
+
 
 li{
     display: inline-block;
+
 
 }
 
@@ -69,17 +70,20 @@ img {
 }
 
 a:hover {
-    background-color: white;
-    color:darkgrey;
+    background-color: lightgrey;
+    color:white;
 }
 
 #text{
-    float:left;
-    font-size: 30px;
+
+    font-size: 60px;
     text-align: center;
     width: 100%;
-    height: 300px;
+    height: 380px;
     background-image: url(../images/obraz.jpg);
+    background-size: cover;
+    color:white;
+    font-weight: 600;
 
 }
 
@@ -106,4 +110,12 @@ a:hover {
     font-size: 12px;
     padding-top: 19px;
     padding-left: 5px;
+}
+.email{
+    text-align: center;
+    background-color: aliceblue;
+    height: 300px;
+
+
+
 }
