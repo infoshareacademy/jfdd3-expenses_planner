@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Liberation Serif"; /* czcionka */
 }
 
 .clear {
@@ -44,10 +45,6 @@ ul {
 
 li {
     display: inline-block;
-}
-
-img {
-    float: left;
 }
 
 a:hover {
