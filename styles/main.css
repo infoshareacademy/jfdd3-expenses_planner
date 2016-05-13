@@ -48,8 +48,6 @@ header {
         color: black;
     }
 
-
-
 #zajawka {
     padding-top: 110px;
 }
@@ -125,6 +123,32 @@ main {
         color:white;
     }
 
+    .czlonkowie{
+    width: 240px;
+    height: 240px;
+    display: inline-block;
+    align-content: center;
+
+    border: 3px solid black;
+    border-radius: 50%;
+    }
+
+    .czlonkowie:hover{
+
+    background-color: indianred;
+    cursor: pointer;
+
+    }
+
+    #zespol{
+        padding-top: 110px;
+        height: 500px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+
+    }
+
 
 footer {
     color: white;
@@ -164,9 +188,13 @@ footer {
         bottom: 60px;
         right: 20px;
         -webkit-filter: blur(3px);
+        filter: blur(3px); /*for Firefox*/
         transition: filter 5s linear 3s;
     }
 
     #backtotop:hover {
         -webkit-filter: blur(0px);
+        filter: blur(0px); /*for Firefox*/
     }
+
+
