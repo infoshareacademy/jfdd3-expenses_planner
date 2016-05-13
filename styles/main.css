@@ -60,6 +60,7 @@ header {
         background-image: url(../images/obraz.jpg);
         background-size: cover;
         color: white;
+        text-shadow: 0px 0px 4px darkgray;
         font-weight: 600;
     }
 
