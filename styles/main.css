@@ -76,6 +76,7 @@ main {
     #opis {
         padding-top: 110px;
         clear: both;
+        height: 400px;
     }
 
     .input{
@@ -115,8 +116,8 @@ main {
         align-content: center;
         text-align: center;
         padding-top: 70px;
-
     }
+
     .funkcja:hover{
         background-color: lightgrey;
         cursor: pointer;
@@ -143,3 +144,28 @@ footer {
         padding-top: 19px;
         padding-left: 5px;
 }
+    .czlonkowie{
+
+        width: 240px;
+        height: 240px;
+        display: inline-block;
+        align-content: center;
+        text-align: center;
+        border: 3px solid red;
+        border-radius: 50%;
+
+    }
+
+    .czlonkowie:hover{
+
+    background-color: indianred;
+        cursor: pointer;
+
+}
+
+    #zespol{
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+
+    }
