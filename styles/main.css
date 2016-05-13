@@ -131,7 +131,7 @@ main {
     display: inline-block;
     align-content: center;
     text-align: center;
-    border: 3px solid red;
+    border: 3px solid black;
     border-radius: 50%;
     }
 
@@ -146,6 +146,7 @@ main {
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+        padding: 10;
 
     }
 
