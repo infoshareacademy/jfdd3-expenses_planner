@@ -171,17 +171,17 @@ footer {
     position: fixed;
     bottom: 60px;
     right: 20px;
-    -webkit-filter: blur(3px); /*zmiana*/
-    filter:; /*for Firefox*/
+    -webkit-filter: opacity(50%); /*zmiana*/
+    filter: opacity(50%); /*for Firefox*/
     transition: filter 2s linear 1s;
 }
 
 .backtotop:hover {
-    -webkit-filter: blur(0px);
-    filter: blur(0px); /*for Firefox*/
+    -webkit-filter: opacity(100%);
+    filter: opacity(100%); /*for Firefox*/
 }
 
 a.backtotop:hover {
-    -webkit-filter: blur(0px);
-    filter: blur(0px); /*for Firefox*/
+    -webkit-filter: opacity(100%));
+    filter: opacity(100%); /*for Firefox*/
 }
