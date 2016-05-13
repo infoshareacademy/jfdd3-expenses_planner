@@ -48,6 +48,8 @@ header {
         color: black;
     }
 
+
+
 #zajawka {
     padding-top: 110px;
 }
@@ -123,6 +125,7 @@ main {
         color:white;
     }
 
+
 footer {
     color: white;
     background-color: black;
@@ -143,3 +146,27 @@ footer {
         padding-top: 19px;
         padding-left: 5px;
 }
+
+    #op-backtotop {
+        float: right;
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+
+        cursor: pointer;
+    }
+
+    #backtotop {
+        float: right;
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        -webkit-filter: blur(3px);
+        transition: filter 5s linear 3s;
+    }
+
+    #backtotop:hover {
+        -webkit-filter: blur(0px);
+    }
