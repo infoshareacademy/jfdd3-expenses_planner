@@ -124,6 +124,32 @@ main {
         color:white;
     }
 
+    .czlonkowie{
+
+    width: 240px;
+    height: 240px;
+    display: inline-block;
+    align-content: center;
+    text-align: center;
+    border: 3px solid red;
+    border-radius: 50%;
+    }
+
+    .czlonkowie:hover{
+
+    background-color: indianred;
+    cursor: pointer;
+
+    }
+
+    #zespol{
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+
+    }
+
+
 footer {
     color: white;
     background-color: black;
@@ -168,3 +194,5 @@ footer {
     #backtotop:hover {
         -webkit-filter: blur(0px);
     }
+
+
