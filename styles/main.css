@@ -64,26 +64,10 @@ header {
         font-weight: 600;
     }
 
-main {
+.input{
+    border: 1px grey solid;
 
-    background-color: white;
-    height: auto;
-    width: 1000px;
-    margin-left:auto;
-    margin-right:auto;
 }
-
-    #opis {
-        padding-top: 110px;
-        clear: both;
-        height: 400px;
-    }
-
-    .input{
-
-        border: 1px grey solid;
-
-    }
 
     .email {
         text-align: center;
@@ -92,7 +76,6 @@ main {
     }
 
     .input1{
-
         background-color: darkred;
         width: 150px;
         height: 50px;
@@ -103,16 +86,27 @@ main {
     }
 
     .input1:hover{
-
         cursor: pointer;
 
+    }
+
+main {
+
+    height: auto;
+    width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+    #opis {
+        padding-top: 110px;
+        min-height: 500px;
     }
 
     .funkcja{
         height: 200px;
         width: 330px;
         display: inline-block;
-        align-content: center;
         text-align: center;
         padding-top: 70px;
 
@@ -122,7 +116,7 @@ main {
         cursor: pointer;
         color:white;
     }
-
+/*
     .czlonkowie{
     width: 240px;
     height: 240px;
@@ -148,7 +142,7 @@ main {
         text-align: center;
 
     }
-
+*/
 
 footer {
     color: white;
@@ -168,7 +162,7 @@ footer {
         float: left;
         font-size: 12px;
         padding-top: 19px;
-        padding-left: 5px;
+        padding-left: 15px;
 }
 
     #op-backtotop {
@@ -178,23 +172,25 @@ footer {
         right: 20px;
         width: 40px;
         height: 40px;
-
         cursor: pointer;
     }
 
-    #backtotop {
+    .backtotop {
         float: right;
         position: fixed;
         bottom: 60px;
         right: 20px;
-        -webkit-filter: blur(3px);
-        filter: blur(3px); /*for Firefox*/
-        transition: filter 5s linear 3s;
+        -webkit-filter: blur(3px); /*zmiana*/
+        filter: ; /*for Firefox*/
+        transition: filter 2s linear 1s;
     }
 
-    #backtotop:hover {
+    .backtotop:hover {
         -webkit-filter: blur(0px);
         filter: blur(0px); /*for Firefox*/
     }
 
-
+    a.backtotop:hover {
+        -webkit-filter: blur(0px);
+        filter: blur(0px); /*for Firefox*/
+    }
