@@ -188,11 +188,13 @@ footer {
         bottom: 60px;
         right: 20px;
         -webkit-filter: blur(3px);
+        filter: blur(3px); /*for Firefox*/
         transition: filter 5s linear 3s;
     }
 
     #backtotop:hover {
         -webkit-filter: blur(0px);
+        filter: blur(0px); /*for Firefox*/
     }
 
 
