@@ -62,23 +62,44 @@ a:hover {
     font-weight: 600;
 }
 
-.input {
-    border: 1px grey solid;
-}
-
 .email {
     text-align: center;
-    background-color: white;
+    background-color: royalblue;
     height: auto;
+    padding: 30px 0px;
+}
+.emailDecoration {
+
+    background-color: navy;
+    border-radius: 8px;
+    max-width: 520px;
+    margin:0 auto;
+    padding:20px;
+    display: inline-block;
 }
 
-.input1 {
-    background-color: darkred;
-    width: 150px;
-    height: 50px;
-    font-size: 30px;
+.form {
+    border-radius: 4px;
+    font-size: 17px ;
+    width: 280px;
+    font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    vertical-align: middle;
+    border: none;
+    padding: 18px;
+
+}
+.formButton {
+    background-color: #2B71B1;
+    font-size: 17px;
+    font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;;
     font-weight: 300;
     color: white;
+    border-radius: 4px;
+    padding: 18px;
+    font-weight: 500;
+    vertical-align: middle;
+    border: none;
+
 }
 
 .input1:hover {
@@ -182,6 +203,6 @@ footer {
 }
 
 a.backtotop:hover {
-    -webkit-filter: opacity(100%));
+    -webkit-filter: opacity(100%);
     filter: opacity(100%); /*for Firefox*/
 }
