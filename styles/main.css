@@ -102,7 +102,6 @@ a:active {
     right: 0;
     bottom: 0;
     left: 0;
-
 }
 
 .motto {
@@ -285,6 +284,7 @@ footer {
     -webkit-filter: opacity(50%); /*zmiana*/
     filter: opacity(50%); /*for Firefox*/
     transition: filter 2s linear 1s;
+    z-index: 11;
 }
 
 .backtotop:hover {
