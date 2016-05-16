@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Liberation Serif", "Times New Roman", Serif;
+    font-family: "Josefin Sans", Candara, Sans-Serif;
 }
 
 .clear {
@@ -26,12 +26,12 @@ div.wrapper {
 }
 
 header ul li a {
-    padding: 0px 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     background-color: white;
     color: darkgray;
     text-decoration: none;
-    font-family: "Liberation Sans", SansSerif;
+    font-family: "Josefin Sans", Candara, Sans-Serif;
     font-weight: 700;
 }
 
@@ -55,8 +55,48 @@ a:active {
 }
 
 .more_info {
+    padding: 40px 0px;
     text-align: center;
-    margin: 60px 0px;
+    font-size:20px;
+}
+
+.find_out {
+    font-size: 40px;
+}
+
+.find_out a:link {
+    text-decoration: none;
+    color:black;
+}
+.find_out a:visited {
+    text-decoration: none;
+    color:black;
+}
+.find_out a:hover {
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.find_out a:active {
+    color:darkred;
+}
+
+.motto {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 300px;
+    width: 100%;
+    height: 380px;
+    background-image: url(../images/obraz_red.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.pod_motto {
+    font-size: 20px;
+    padding: 0px;
+    text-shadow: none;
+    text-align: center;
 }
 
 .interested {
