@@ -128,16 +128,25 @@ a:active {
     text-align: center;
     background-image: url(../images/redbackground.jpg);
     height: auto;
+}
+
+
+.przyc {
+    width:auto;
+    height:auto;
+    background-color:rgba(0,0,0,0.25);
     padding: 80px 0px;
 }
-.email p:first-child {
+
+.przyc p:first-child {
     font-size: 44px;
     color: white;
 }
-
 .email p:nth-child(2){
-    font-size: 30px;
+    font-size: 18px;
     color:white;
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
 }
 .emailDecoration {
 
