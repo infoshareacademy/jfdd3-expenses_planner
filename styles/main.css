@@ -8,6 +8,11 @@
     clear: both;
 }
 
+.background{
+    background-color: white;
+    opacity: 0.6;
+}
+
 header {
     background-color: white;
     position: fixed;
