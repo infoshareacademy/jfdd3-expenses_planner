@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Liberation Serif", "Times New Roman", Serif;
+    font-family: "Josefin Sans", Candara, Sans-Serif;
 }
 
 .clear {
@@ -11,9 +11,10 @@
 header {
     background-color: white;
     position: fixed;
-    top: 0;
+
     right: 0;
     left: 0;
+    padding-top: 10px;
 }
 
 .wrapper {
@@ -27,7 +28,7 @@ header ul li a {
     background-color: white;
     color: darkgray;
     text-decoration: none;
-    font-family: "Liberation Sans", SansSerif;
+    font-family:  "Josefin Sans", Candara, Sans-Serif;
     font-weight: 700;
 }
 
@@ -35,7 +36,7 @@ ul {
     display: inline-block;
     float: right;
     margin-right: 10px;
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 li {
@@ -46,20 +47,61 @@ a:hover {
     color: black;
 }
 
-#zajawka {
-    padding-top: 110px;
+a:active {
+    color: darkred;
 }
 
-#tekst {
-    font-size: 60px;
+#zajawka {
+    padding-top: 70px;
+}
+
+.more_info {
+    padding: 40px 0px;
     text-align: center;
+    font-size:20px;
+}
+
+.find_out {
+    font-size: 40px;
+}
+
+.find_out a:link {
+    text-decoration: none;
+    color:black;
+}
+.find_out a:visited {
+    text-decoration: none;
+    color:black;
+}
+.find_out a:hover {
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.find_out a:active {
+    color:darkred;
+}
+
+.motto {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 300px;
     width: 100%;
-    height: 450px;
-    background-image: url(../images/obraz.jpg);
+    height: 380px;
+    background-image: url(../images/obraz_red.jpg);
     background-size: cover;
     color: white;
-    text-shadow: 2px 3px 6px darkgray, 2px 10px 10px black;
-    font-weight: 600;
+}
+
+.pod_motto {
+    font-size: 20px;
+    padding: 0px;
+    text-shadow: none;
+    text-align: center;
+}
+
+.input {
+    border: 1px grey solid;
 }
 
 .email {
@@ -119,7 +161,11 @@ main {
 
 #opis {
     padding-top: 110px;
-    min-height: 500px;
+    min-height: 800px;
+}
+
+.icon {
+    opacity: 0.5;
 }
 
 .funkcja {
