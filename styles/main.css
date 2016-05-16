@@ -193,10 +193,10 @@ main {
 
 .funkcja {
     height: 200px;
-    width: 330px;
+    width: 300px;
     display: inline-block;
     text-align: center;
-    padding-top: 70px;
+    padding: 70px 15px 0px;
     vertical-align: top;
 }
 
