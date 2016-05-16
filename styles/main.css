@@ -196,7 +196,8 @@ main {
 }
 
 .icon {
-    opacity: 0.5;
+    opacity: 0.3;
+    padding-bottom: 20px;
 }
 
 .funkcja {
@@ -205,12 +206,16 @@ main {
     display: inline-block;
     text-align: center;
     padding-top: 70px;
+    vertical-align: top;
 }
 
-.funkcja:hover {
-    background-color: lightgrey;
-    cursor: pointer;
-    color: white;
+.opis_tytul {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.opis_tekst {
+    font-size: 18px;
 }
 
 /*
