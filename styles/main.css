@@ -100,10 +100,6 @@ a:active {
     text-align: center;
 }
 
-.input {
-    border: 1px grey solid;
-}
-
 .email {
     text-align: center;
     background-image: url(../images/redbackground.jpg);
