@@ -308,7 +308,8 @@ a.backtotop:hover {
 
 .button:hover {
     color:white;
-    border: 3px solid grey;
+    font-size: 40px;
+    cursor: pointer;
 
 }
 
