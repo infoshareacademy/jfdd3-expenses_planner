@@ -88,7 +88,7 @@ a:active {
 }
 
 .tlo{
-    background-image: url(../images/obraz.jpg);
+    background-image: url(../images/obraz-szary.jpg);
     background-size: cover;
     position: relative;
     opacity: 1;
@@ -284,7 +284,7 @@ footer {
     -webkit-filter: opacity(50%); /*zmiana*/
     filter: opacity(50%); /*for Firefox*/
     transition: filter 2s linear 1s;
-    z-index: 11;
+    z-index: 5;
 }
 
 .backtotop:hover {
