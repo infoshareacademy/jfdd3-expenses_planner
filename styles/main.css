@@ -301,22 +301,21 @@ a.backtotop:hover {
 }
 
 .button{
-
-    background-color: transparent;
-    border:1px solid transparent;
-    height: 100px;
-    width: 400px;
-    font-size: 30px;
+    background-color:rgba(255, 255, 255, 0.4);
     color:white;
+    padding:10px 20px;
     border:1px white solid;
-    border-radius: 30px;
+    border-radius: 10px;
+    transition: font-size 0.5s;
+    font-size: 40px;
+
 }
 
 .button:hover {
     color:white;
-    font-size: 40px;
+    font-size: 60px;
     cursor: pointer;
-
+    background-color:transparent ;
 }
 
 
