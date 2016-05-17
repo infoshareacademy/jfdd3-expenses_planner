@@ -200,21 +200,22 @@ main {
 }
 
 .funkcja {
-    height: 200px;
+    height: 600px;
     width: 300px;
     display: inline-block;
     text-align: center;
     padding: 70px 15px 0px;
     vertical-align: top;
+    margin-top:70px;
 }
 
 .opis_tytul {
-    font-size: 20px;
+    font-size: 23px;
     padding-bottom: 10px;
 }
 
 .opis_tekst {
-    font-size: 18px;
+    font-size: 17px;
     text-align: center;
     font-family: 'Playfair Display', serif;
     padding: 10px;
