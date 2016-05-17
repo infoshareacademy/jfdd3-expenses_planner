@@ -120,7 +120,7 @@ a:active {
     font-size: 20px;
     padding: 0px;
     text-shadow: none;
-    text-align: center;
+    text-align: justify;
 }
 
 .email {
@@ -215,7 +215,8 @@ main {
 
 .opis_tekst {
     font-size: 18px;
-    text-align: justify;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
 }
 
 
