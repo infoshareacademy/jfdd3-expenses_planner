@@ -218,7 +218,7 @@ main {
     text-align: justify;
 }
 
-/*
+
     .czlonkowie{
     width: 240px;
     height: 240px;
@@ -243,7 +243,7 @@ main {
         margin-left: auto;
         text-align: center;
     }
-*/
+
 
 footer {
     color: white;
@@ -305,6 +305,8 @@ a.backtotop:hover {
     width: 400px;
     font-size: 30px;
     color:white;
+    border:1px white solid;
+    border-radius: 30px;
 }
 
 .button:hover {
