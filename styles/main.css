@@ -91,6 +91,7 @@ a:active {
     background-image: url(../images/obraz-szary.jpg);
     background-size: cover;
     position: relative;
+    height: 95vh;
     opacity: 1;
 }
 
@@ -133,7 +134,7 @@ a:active {
 
 
 .przyc {
-    width: 100vw;
+    width: auto;
     height: 100vh;
     background-color:rgba(0,0,0,0.25);
     padding: 80px auto;
