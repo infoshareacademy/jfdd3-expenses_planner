@@ -126,22 +126,32 @@ a:active {
 #email {
     text-align: center;
     background-image: url(../images/redbackground.jpg);
-    height: auto;
+    background-size: cover;
+    min-height: 100vh;
+
 }
 
 
 .przyc {
-    width:auto;
-    height:auto;
+    width: 100vw;
+    height: 100vh;
     background-color:rgba(0,0,0,0.25);
-    padding: 80px 0px;
+    padding: 80px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
-.przyc p:first-child {
+.flex{
+    align-self: center;
+}
+
+.flex p:first-child {
     font-size: 44px;
     color: white;
+    text-decoration: none;
 }
-.email p:nth-child(2){
+.flex p:nth-child(2){
     font-size: 18px;
     color:white;
     font-family: 'Playfair Display', serif;
@@ -224,10 +234,10 @@ main {
 
     .czlonkowie{
     width: 220px;
-    height: 600px;
+    height: 500px;
     display: inline-block;
     align-content: center;
-    border: 2px solid darkgray;
+    border: 2px solid #cc0000;
     border-radius: 10px;
         float:left;
         margin-left: 10px;
@@ -298,14 +308,15 @@ a.backtotop:hover {
     filter: opacity(100%); /*for Firefox*/
 }
 
-.button{
-    background-color:rgba(255, 255, 255, 0.4);
-    color:white;
-    padding:10px 20px;
-    border:1px white solid;
+.button {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 20px 10px 10px 10px;
+    border: 1px white solid;
     border-radius: 10px;
     transition: font-size 0.5s;
     font-size: 40px;
+
 
 }
 
@@ -315,5 +326,3 @@ a.backtotop:hover {
     cursor: pointer;
     background-color:transparent ;
 }
-
-
