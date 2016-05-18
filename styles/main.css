@@ -150,7 +150,7 @@ a:active {
     font-size: 44px;
     color: white;
 }
-.email p:nth-child(2){
+.flex p:nth-child(2){
     font-size: 18px;
     color:white;
     font-family: 'Playfair Display', serif;
