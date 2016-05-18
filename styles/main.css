@@ -134,7 +134,7 @@ a:active {
 
 
 .przyc {
-    width: 100vw;
+    width: auto;
     height: 100vh;
     background-color:rgba(0,0,0,0.25);
     padding: 80px auto;
@@ -236,6 +236,7 @@ main {
     .czlonkowie{
     width: 220px;
     height: 550px;
+        margin: 0px 20px;
     display: inline-block;
     align-content: center;
     background-color: white;
@@ -250,7 +251,7 @@ main {
     }
 
     #zespol{
-        padding-top: 110px;
+        padding-top: 180px;
         height: 100vh;
         margin-right: auto;
         margin-left: auto;
