@@ -9,6 +9,9 @@
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
     <script src="jquery-2.2.3.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/scroll.js"></script>
+
 </head>
 
 <body>
@@ -16,9 +19,9 @@
     <div class="wrapper">
         <img src="images/logo_EXPNS$.png" alt="" height="50" width="120">
         <ul>
-            <li><a href="#zajawka">ZAJAWKA</a></li> <!-- opis przycisku -->
-            <li><a href="#opis">FUNKCJONALNOŚCI</a></li> <!-- opis przycisku -->
-            <li><a href="#zespol">O ZESPOLE</a></li> <!-- opis przycisku -->
+            <li><a id="link3" href="#">ZAJAWKA</a></li> <!-- opis przycisku -->
+            <li><a id='link' href="#">FUNKCJONALNOŚCI</a></li> <!-- opis przycisku -->
+            <li><a id="link1"href="#">O ZESPOLE</a></li> <!-- opis przycisku -->
             <li><a href="#email">KONTAKT</a></li> <!-- opis przycisku -->
         </ul>
     </div>
@@ -125,7 +128,7 @@
         </a>
     </div>
     <div id="op-backtotop">
-        <a class="backtotop" href="#zajawka"><img src="images/backtotop.png" alt="Back" title="Home"></a>
+        <a id="backtop" class="backtotop" href="#"><img src="images/backtotop.png" alt="Back" title="Home"></a>
     </div>
     <div class="clear"></div> <!--czyszczenie ruchu przycisku-->
 </footer>
