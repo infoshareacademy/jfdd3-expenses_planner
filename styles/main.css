@@ -146,9 +146,10 @@ a:active {
     align-self: center;
 }
 
-.przyc p:first-child {
+.flex p:first-child {
     font-size: 44px;
     color: white;
+    text-decoration: none;
 }
 .flex p:nth-child(2){
     font-size: 18px;
@@ -307,14 +308,15 @@ a.backtotop:hover {
     filter: opacity(100%); /*for Firefox*/
 }
 
-.button{
-    background-color:rgba(255, 255, 255, 0.4);
-    color:white;
-    padding:10px 20px;
-    border:1px white solid;
+.button {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 20px 10px 10px 10px;
+    border: 1px white solid;
     border-radius: 10px;
     transition: font-size 0.5s;
     font-size: 40px;
+
 
 }
 
@@ -324,5 +326,3 @@ a.backtotop:hover {
     cursor: pointer;
     background-color:transparent ;
 }
-
-
