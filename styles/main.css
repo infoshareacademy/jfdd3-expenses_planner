@@ -126,15 +126,24 @@ a:active {
 #email {
     text-align: center;
     background-image: url(../images/redbackground.jpg);
-    height: auto;
+    background-size: cover;
+    min-height: 100vh;
+
 }
 
 
 .przyc {
-    width:auto;
-    height:auto;
+    width: 100vw;
+    height: 100vh;
     background-color:rgba(0,0,0,0.25);
-    padding: 80px 0px;
+    padding: 80px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.flex{
+    align-self: center;
 }
 
 .przyc p:first-child {
