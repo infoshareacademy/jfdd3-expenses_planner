@@ -5,10 +5,10 @@ jQuery(function($)
     {
         //zresetuj scrolla
 
-        $('#link').click(function() { $.scrollTo($('#opis'), 1500); });
-        $('#link1').click(function() { $.scrollTo($('#zespol'), 1500); });
-        $('#link3').click(function() { $.scrollTo($('body'), 1000); });
-        $('#backtop').click(function() { $.scrollTo($('body'), 1000); });
+        $('#link').click(function() { $.scrollTo($('#opis'), 1500); return false});
+        $('#link1').click(function() { $.scrollTo($('#zespol'), 1500); return false});
+        $('#link3').click(function() { $.scrollTo($('body'), 1000); return false});
+        $('#backtop').click(function() { $.scrollTo($('body'), 1000); return false});
     }
 );
 
