@@ -9,6 +9,9 @@
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
     <script src="jquery-2.2.3.min.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/scroll.js"></script>
+
 </head>
 
 <body>
@@ -16,16 +19,16 @@
     <div class="wrapper">
         <img src="images/logo_EXPNS$.png" alt="" height="50" width="120">
         <ul>
-            <li><a href="#zajawka">ZAJAWKA</a></li> <!-- opis przycisku -->
-            <li><a href="#opis">FUNKCJONALNOŚCI</a></li> <!-- opis przycisku -->
-            <li><a href="#zespol">O ZESPOLE</a></li> <!-- opis przycisku -->
-            <li><a href="#email">KONTAKT</a></li> <!-- opis przycisku -->
+            <li><a id="link3" href="#">ZAJAWKA</a></li> <!-- opis przycisku -->
+            <li><a id='link' href="#">FUNKCJONALNOŚCI</a></li> <!-- opis przycisku -->
+            <li><a id="link1"href="#">O ZESPOLE</a></li> <!-- opis przycisku -->
+            <li><a id="cont" href="#">KONTAKT</a></li> <!-- opis przycisku -->
         </ul>
     </div>
 </header>
 <div id="zajawka">
     <div class="tlo">
-        <div class="tlo-filtr"></div>
+
             <div class="motto">
                 <span>ZAPLANUJ PODRÓŻ ŁATWIEJ NIŻ KIEDYKOLWIEK</span><br><br><br><br>
 
@@ -56,12 +59,13 @@
         </div>
     </div>
 
+</main>
 
-            <div id="zespol">
+            <div id="zespol"><div class="wrapper">
                 <div class="czlonkowie">
                     <br><br><br>
                     <img class="avatar" src="images/icons/natalia.png" height="100px" width="100px"/><br>
-                    <p>NATALIA</p>
+                    <p class="opis_tytul">NATALIA</p>
                     <br>
                     <p class="opis_tekst">Natalia urodziła się w 1989 roku,
                     Jako rodowita Gdańszczanka
@@ -72,14 +76,14 @@
                 <div class="czlonkowie">
                     <br><br><br>
                     <img class="avatar" src="images/icons/grzegorz.png" height="100px" width="100px"/><br>
-                    <p>GRZEGORZ</p><br>
+                    <p class="opis_tytul">GRZEGORZ</p><br>
                     <p class="opis_tekst">Z wykształcenia dyplomata. Dotychczas zawodowo związany z Funduszami Unijnymi. Ukończył kursy w zakresie zarządzania projektami oraz grafiki komputerowej.<br>
                         W wolnym czasie chętnie gra w planszówki i spływa rzekami.<br> Kibicuje Manchesterowi United.</p>
                 </div>
                 <div class="czlonkowie">
                     <br><br><br>
                     <img class="avatar" src="images/icons/krystian.png" height="100px" width="100px"/><br>
-                    <p>KRYSTIAN</p><br>
+                    <p class="opis_tytul">KRYSTIAN</p><br>
                     <p class="opis_tekst">Krystian jest bliski zdobycia tytułu magistra z Finansów i Controllingu. <br>
                     Uznał jednak, że studia nie gwarantują mu pracy, a co więcej nie dają żadnej satysfakcji.
                         I tak znalazł się w naszym zespole. Jest uzależniony od Realu Madryt ! <br>
@@ -88,7 +92,7 @@
                 <div class="czlonkowie">
                     <br><br><br>
                     <img class="avatar" src="images/icons/dawid.png" height="100px" width="100px"/><br>
-                    <p>DAWID</p><br>
+                    <p class="opis_tytul">DAWID</p><br>
                     <p class="opis_tekst">
                         Dawid uzyskał tytuł magistra z Geografii. Dręczenie
                         dzieci jednak niezbyt mu odpowiada. <br>
@@ -96,11 +100,11 @@
                         Ma do tego masę uzależnień od książek, gier, sportu i techniki.<br>
                     </p>
                 </div>
+            </div>
                 <!--<div class="clear"></div>-->
             </div>
 
 
-</main>
 
 <div id="email">
     <div class="przyc">
@@ -126,7 +130,7 @@
         </a>
     </div>
     <div id="op-backtotop">
-        <a class="backtotop" href="#zajawka"><img src="images/backtotop.png" alt="Back" title="Home"></a>
+        <a id="backtop" class="backtotop" href="#"><img src="images/backtotop.png" alt="Back" title="Home"></a>
     </div>
     <div class="clear"></div> <!--czyszczenie ruchu przycisku-->
 </footer>

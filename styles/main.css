@@ -88,7 +88,7 @@ a:active {
 }
 
 .tlo{
-    background-image: url(../images/obraz-szary.jpg);
+    background-image: url(../images/obraz_red.jpg);
     background-size: cover;
     position: relative;
     height: 95vh;
@@ -134,7 +134,7 @@ a:active {
 
 
 .przyc {
-    width: auto;
+    width: 100vw;
     height: 100vh;
     background-color:rgba(0,0,0,0.25);
     padding: 80px auto;
@@ -235,16 +235,17 @@ main {
 
     .czlonkowie{
     width: 220px;
-    height: 500px;
+    height: 550px;
     display: inline-block;
     align-content: center;
-    border: 2px solid #cc0000;
+    background-color: white;
     border-radius: 10px;
         float:left;
         margin-left: 10px;
     }
 
     .avatar {
+        padding-bottom: 20px;
 
     }
 
@@ -254,6 +255,7 @@ main {
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+        background-color: lightgrey;
     }
 
 
