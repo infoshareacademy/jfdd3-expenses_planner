@@ -236,7 +236,7 @@ main {
     height: 500px;
     display: inline-block;
     align-content: center;
-    border: 2px solid darkgray;
+    border: 2px solid #cc0000;
     border-radius: 10px;
         float:left;
         margin-left: 10px;
