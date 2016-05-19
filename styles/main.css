@@ -8,6 +8,8 @@
     clear: both;
 }
 
+/*HEADER*/
+
 .background{
     background-color: white;
     opacity: 0.6;
@@ -56,6 +58,8 @@ a:active {
     color: darkred;
 }
 
+/* ZAJAWKA */
+
 #zajawka {
     padding-top: 70px;
 }
@@ -87,22 +91,12 @@ a:active {
     color:darkred;
 }
 
-.tlo{
+.zajawka_background {
     background-image: url(../images/obraz_red.jpg);
     background-size: cover;
     position: relative;
     height: 95vh;
     opacity: 1;
-}
-
-.tlo-filtr{
-    background-color: red;
-    opacity: 0.4;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 
 .motto {
@@ -114,15 +108,146 @@ a:active {
     opacity: 1;
     color: white;
     z-index: 10;
-    position: relative;
+position: relative;
 }
 
-.pod_motto {
-    font-size: 20px;
-    padding: 0px;
-    text-shadow: none;
-    text-align: justify;
+.button {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 20px 10px 10px 10px;
+    border: 1px white solid;
+    border-radius: 10px;
+    transition: font-size 0.5s;
+    font-size: 40px;
 }
+
+.button:hover {
+    color:white;
+    font-size: 60px;
+    cursor: pointer;
+    background-color:transparent ;
+}
+
+/*FUNKCJE*/
+
+main {
+height: auto;
+}
+
+#description {
+padding-top: 70px;
+min-height: 100vh;
+}
+.function {
+height: 600px;
+width: 300px;
+display: inline-block;
+text-align: center;
+padding: 70px 15px 0px;
+vertical-align: top;
+margin-top:70px;
+}
+
+.icon {
+opacity: 0.3;
+padding-bottom: 20px;
+}
+
+.descr_title {
+font-size: 23px;
+padding-bottom: 10px;
+}
+
+.descr_text {
+font-size: 17px;
+text-align: center;
+font-family: 'Playfair Display', serif;
+padding: 10px;
+}
+
+/*TEAM*/
+
+#team{
+padding-top: 180px;
+height: 100vh;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+background-color: lightgrey;
+}
+
+.members{
+width: 220px;
+height: 550px;
+margin: 0px 20px;
+display: inline-block;
+align-content: center;
+background-color: white;
+border-radius: 10px;
+float:left;
+margin-left: 10px;
+}
+
+.avatar {
+padding-bottom: 20px;
+
+}
+
+/*FOOTER*/
+
+footer {
+color: white;
+background-color: black;
+height: 50px;
+}
+
+/* Podłączenie twitter */
+#twitter {
+float: right;
+padding-top: 5px;
+padding-right: 15px;
+}
+
+/* Opis copyright */
+#copyright {
+float: left;
+font-size: 12px;
+padding-top: 19px;
+padding-left: 15px;
+}
+
+#op-backtotop {
+float: right;
+position: fixed;
+bottom: 60px;
+right: 20px;
+width: 40px;
+height: 40px;
+cursor: pointer;
+}
+
+.backtotop {
+float: right;
+position: fixed;
+bottom: 60px;
+right: 20px;
+-webkit-filter: opacity(50%); /*zmiana*/
+filter: opacity(50%); /*for Firefox*/
+transition: filter 2s linear 1s;
+z-index: 5;
+}
+
+.backtotop:hover {
+-webkit-filter: opacity(100%);
+filter: opacity(100%); /*for Firefox*/
+}
+
+a.backtotop:hover {
+-webkit-filter: opacity(100%);
+filter: opacity(100%); /*for Firefox*/
+}
+
+    /*FORMULARZ*/
 
 #email {
     text-align: center;
@@ -133,7 +258,7 @@ a:active {
 }
 
 
-.przyc {
+. {
     width: auto;
     height: 100vh;
     background-color:rgba(0,0,0,0.25);
@@ -190,143 +315,4 @@ a:active {
     vertical-align: middle;
     border: none;
 
-}
-
-.input1:hover {
-    cursor: pointer;
-}
-
-main {
-    height: auto;
-}
-
-#opis {
-    padding-top: 70px;
-    min-height: 100vh;
-}
-
-.icon {
-    opacity: 0.3;
-    padding-bottom: 20px;
-}
-
-.funkcja {
-    height: 600px;
-    width: 300px;
-    display: inline-block;
-    text-align: center;
-    padding: 70px 15px 0px;
-    vertical-align: top;
-    margin-top:70px;
-}
-
-.opis_tytul {
-    font-size: 23px;
-    padding-bottom: 10px;
-}
-
-.opis_tekst {
-    font-size: 17px;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    padding: 10px;
-}
-
-
-    .czlonkowie{
-    width: 220px;
-    height: 550px;
-        margin: 0px 20px;
-    display: inline-block;
-    align-content: center;
-    background-color: white;
-    border-radius: 10px;
-        float:left;
-        margin-left: 10px;
-    }
-
-    .avatar {
-        padding-bottom: 20px;
-
-    }
-
-    #zespol{
-        padding-top: 180px;
-        height: 100vh;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: center;
-        background-color: lightgrey;
-    }
-
-
-footer {
-    color: white;
-    background-color: black;
-    height: 50px;
-}
-
-/* Podłączenie twitter */
-#twitter {
-    float: right;
-    padding-top: 5px;
-    padding-right: 15px;
-}
-
-/* Opis copyright */
-#copyright {
-    float: left;
-    font-size: 12px;
-    padding-top: 19px;
-    padding-left: 15px;
-}
-
-#op-backtotop {
-    float: right;
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-}
-
-.backtotop {
-    float: right;
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    -webkit-filter: opacity(50%); /*zmiana*/
-    filter: opacity(50%); /*for Firefox*/
-    transition: filter 2s linear 1s;
-    z-index: 5;
-}
-
-.backtotop:hover {
-    -webkit-filter: opacity(100%);
-    filter: opacity(100%); /*for Firefox*/
-}
-
-a.backtotop:hover {
-    -webkit-filter: opacity(100%);
-    filter: opacity(100%); /*for Firefox*/
-}
-
-.button {
-    background-color: rgba(255, 255, 255, 0.4);
-    color: white;
-    padding: 20px 10px 10px 10px;
-    border: 1px white solid;
-    border-radius: 10px;
-    transition: font-size 0.5s;
-    font-size: 40px;
-
-
-}
-
-.button:hover {
-    color:white;
-    font-size: 60px;
-    cursor: pointer;
-    background-color:transparent ;
 }
