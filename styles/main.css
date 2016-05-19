@@ -254,11 +254,9 @@ filter: opacity(100%); /*for Firefox*/
     background-image: url(../images/redbackground.jpg);
     background-size: cover;
     min-height: 100vh;
-
 }
 
-
-. {
+.darken {
     width: auto;
     height: 100vh;
     background-color:rgba(0,0,0,0.25);
