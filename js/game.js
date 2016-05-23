@@ -1,7 +1,4 @@
-
 'use strict';
-
-
 
 function createBoard(height, width) {
     var $board = $('<table>');
@@ -11,11 +8,11 @@ function createBoard(height, width) {
          $row = $("<tr>");
         for (var x = 0; x < width; x += 1) {
              $data = $('<td>')
-            .addClass('black');
+            .addClass('game_square');
             $row.append($data);
         }
         $board.append($row);
     }
     return $board;
 }
-$('#game').append(createBoard(5,5));
+$('#game').append(createBoard(15,15));
