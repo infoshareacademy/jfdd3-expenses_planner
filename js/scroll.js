@@ -1,10 +1,7 @@
-
 $(document).ready(function() {
 
     $('a[href^="#"]').on('click', function(event) {
-
         var target = $( $(this).attr('href') );
-
         if( target.length ) {
             event.preventDefault();
             $('html, body').animate({
@@ -12,9 +9,7 @@ $(document).ready(function() {
             }, 1000);
         }
     });
-
 });
-
 
 $(window).scroll(function()
     {
