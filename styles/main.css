@@ -60,7 +60,7 @@ a:active {
 
 /* ZAJAWKA */
 
-#zajawka {
+#callToactionZajawka {
     padding-top: 70px;
 }
 
@@ -111,7 +111,7 @@ a:active {
     position: relative;
 }
 
-.button {
+.callToactionButton {
     background-color: rgba(255, 255, 255, 0.4);
     color: white;
     padding: 20px 10px 10px 10px;
@@ -121,7 +121,7 @@ a:active {
     font-size: 40px;
 }
 
-.button:hover {
+.callToactionButton:hover {
     color:white;
     font-size: 60px;
     cursor: pointer;
