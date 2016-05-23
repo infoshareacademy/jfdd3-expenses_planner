@@ -1,9 +1,9 @@
 // function to animated scrolling
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('a[href^="#"]').on('click', function(event) {
-        var target = $( $(this).attr('href') );
-        if(target.length) {
+    $('a[href^="#"]').on('click', function (event) {
+        var target = $($(this).attr('href'));
+        if (target.length) {
             event.preventDefault();
             $('html, body').animate({
                 scrollTop: target.offset().top
@@ -13,9 +13,8 @@ $(document).ready(function() {
 });
 
 // function to hide and show #backToTopButton
-$(window).scroll(function()
-    {
-        if($(this).scrollTop()>300) $('#backtop').fadeIn();
+$(window).scroll(function () {
+        if ($(this).scrollTop() > 300) $('#backtop').fadeIn();
         else $('#backtop').fadeOut();
     }
 );
