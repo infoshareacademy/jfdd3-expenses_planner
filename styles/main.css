@@ -201,14 +201,13 @@ footer {
     height: 50px;
 }
 
-/* Podłączenie twitter */
 #twitter {
     float: right;
     padding-top: 5px;
     padding-right: 15px;
 }
 
-/* Opis copyright */
+
 #copyright {
     float: left;
     font-size: 12px;
