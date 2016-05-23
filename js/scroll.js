@@ -1,5 +1,5 @@
 // function to animated scrolling
-$(document).ready(function () {
+$(document).read(function () {
 
     $('a[href^="#"]').on('click', function (event) {
         var target = $($(this).attr('href'));
