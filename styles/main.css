@@ -1,5 +1,5 @@
 /*Wpisane bo Natalia popsuła kompa*/
-
+/*zmiana*/
 * {
     margin: 0;
     padding: 0;
@@ -110,7 +110,7 @@ a:active {
     opacity: 1;
     color: white;
     z-index: 10;
-position: relative;
+    position: relative;
 }
 
 .button {
@@ -133,123 +133,123 @@ position: relative;
 /*FUNKCJE*/
 
 main {
-height: auto;
+    height: auto;
 }
 
 #description {
-padding-top: 70px;
-min-height: 100vh;
+    padding-top: 70px;
+    min-height: 100vh;
 }
 .function {
-height: 600px;
-width: 300px;
-display: inline-block;
-text-align: center;
-padding: 70px 15px 0px;
-vertical-align: top;
-margin-top:70px;
+    height: 600px;
+    width: 300px;
+    display: inline-block;
+    text-align: center;
+    padding: 70px 15px 0px;
+    vertical-align: top;
+    margin-top:70px;
 }
 
 .icon {
-opacity: 0.3;
-padding-bottom: 20px;
+    opacity: 0.3;
+    padding-bottom: 20px;
 }
 
 .descr_title {
-font-size: 23px;
-padding-bottom: 10px;
+    font-size: 23px;
+    padding-bottom: 10px;
 }
 
 .descr_text {
-font-size: 17px;
-text-align: center;
-font-family: 'Playfair Display', serif;
-padding: 10px;
+    font-size: 17px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    padding: 10px;
 }
 
 /*TEAM*/
 
 #team{
-padding-top: 180px;
-height: 100vh;
-margin-right: auto;
-margin-left: auto;
-text-align: center;
-background-color: lightgrey;
+    padding-top: 180px;
+    height: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    background-color: lightgrey;
 }
 
 .members{
-width: 220px;
-height: 550px;
-margin: 0px 20px;
-display: inline-block;
-align-content: center;
-background-color: white;
-border-radius: 10px;
-float:left;
-margin-left: 10px;
+    width: 220px;
+    height: 550px;
+    margin: 0px 20px;
+    display: inline-block;
+    align-content: center;
+    background-color: white;
+    border-radius: 10px;
+    float:left;
+    margin-left: 10px;
 }
 
 .avatar {
-padding-bottom: 20px;
+    padding-bottom: 20px;
 
 }
 
 /*FOOTER*/
 
 footer {
-color: white;
-background-color: black;
-height: 50px;
+    color: white;
+    background-color: black;
+    height: 50px;
 }
 
 /* Podłączenie twitter */
 #twitter {
-float: right;
-padding-top: 5px;
-padding-right: 15px;
+    float: right;
+    padding-top: 5px;
+    padding-right: 15px;
 }
 
 /* Opis copyright */
 #copyright {
-float: left;
-font-size: 12px;
-padding-top: 19px;
-padding-left: 15px;
+    float: left;
+    font-size: 12px;
+    padding-top: 19px;
+    padding-left: 15px;
 }
 
 #op-backtotop {
-float: right;
-position: fixed;
-bottom: 60px;
-right: 20px;
-width: 40px;
-height: 40px;
-cursor: pointer;
+    float: right;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 
 .backtotop {
-float: right;
-position: fixed;
-bottom: 60px;
-right: 20px;
--webkit-filter: opacity(50%); /*zmiana*/
-filter: opacity(50%); /*for Firefox*/
-transition: filter 2s linear 1s;
-z-index: 5;
+    float: right;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    -webkit-filter: opacity(50%); /*zmiana*/
+    filter: opacity(50%); /*for Firefox*/
+    transition: filter 2s linear 1s;
+    z-index: 5;
 }
 
 .backtotop:hover {
--webkit-filter: opacity(100%);
-filter: opacity(100%); /*for Firefox*/
+    -webkit-filter: opacity(100%);
+    filter: opacity(100%); /*for Firefox*/
 }
 
 a.backtotop:hover {
--webkit-filter: opacity(100%);
-filter: opacity(100%); /*for Firefox*/
+    -webkit-filter: opacity(100%);
+    filter: opacity(100%); /*for Firefox*/
 }
 
-    /*FORMULARZ*/
+/*FORMULARZ*/
 
 #email {
     text-align: center;
