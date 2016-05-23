@@ -153,12 +153,12 @@ main {
     padding-bottom: 20px;
 }
 
-.descr_title {
+.description_header {
     font-size: 23px;
     padding-bottom: 10px;
 }
 
-.descr_text {
+.description_text {
     font-size: 17px;
     text-align: center;
     font-family: 'Playfair Display', serif;
