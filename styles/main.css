@@ -70,30 +70,6 @@ a:active {
     font-size: 20px;
 }
 
-.find_out {
-    font-size: 40px;
-}
-
-.find_out a:link {
-    text-decoration: none;
-    color: black;
-}
-
-.find_out a:visited {
-    text-decoration: none;
-    color: black;
-}
-
-.find_out a:hover {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.find_out a:active {
-    color: darkred;
-}
-
 .zajawka_background {
     background-image: url(../images/obraz_red.jpg);
     background-size: cover;
