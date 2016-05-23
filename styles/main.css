@@ -170,7 +170,6 @@ main {
 
 .avatar {
     padding-bottom: 20px;
-
 }
 
 /*FOOTER*/
@@ -262,7 +261,6 @@ a.backtotop:hover {
 }
 
 .emailDecoration {
-
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     max-width: 520px;
@@ -279,7 +277,6 @@ a.backtotop:hover {
     vertical-align: middle;
     border: none;
     padding: 18px;
-
 }
 
 .formButton {
@@ -293,5 +290,4 @@ a.backtotop:hover {
     font-weight: 500;
     vertical-align: middle;
     border: none;
-
 }
