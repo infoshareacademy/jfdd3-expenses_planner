@@ -16,3 +16,19 @@ function createBoard(height, width) {
     return $board;
 }
 $('#game').append(createBoard(10,10));
+
+$('#game').keydown(function(e) {
+    switch (e.which){
+        case 37: //lewo
+            console.log(left);
+
+        case 38:
+            console.log(up);
+        case 39:
+            console.log(right);
+        case 40:
+            console.log(down);
+        default: return; // no control on rest keys
+    }
+    e.preventDefault(); //blocking keys
+});
