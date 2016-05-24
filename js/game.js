@@ -23,16 +23,56 @@ $(document).keydown(function (e) {
    switch (keyCode) {
        case arrow.left:
            console.log('left');
+           if () {
+           }
            break;
        case arrow.up:
            console.log('up');
+           if () {
+           }
            break;
        case arrow.right:
            console.log('right');
+           if () {
+           }
            break;
        case arrow.down:
            console.log('down');
+           if () {
+           }
            break;
    }
 });
+
+// Game constant options - movement
+
+// Movement
+// 7  0  1
+// 6     2
+// 5  4  3
+
+var DIR = {UP: 0, UPRIGHT: 1, RIGHT: 2, DOWNRIGHT: 3, DOWN: 4, DOWNLEFT: 5, LEFT: 6, UPLEFT: 7};
+var DIRX = [   0,          1,        1,            1,       0,          -1,      -1,        -1];
+var DIRY = [  -1,         -1,        0,            1,       1,           1,       0,        -1];
+
+//Player Script
+
+
+//Player Movement
+
+Player.go = function () {
+
+    var oldPLpos = Player.PLpos,
+        myDirection = currentDirection,
+        grid = createBoard.grid;
+
+    Player.PLpos = NewPLpos;
+
+    if (grid[NewPLpos.row] && grid[NewPLpos.row][NewPLpos.col]) {
+        grid[NewPLpos.row][NewPLpos.col] = 0;
+    }
+
+
+
+};
 
