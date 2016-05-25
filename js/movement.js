@@ -29,10 +29,15 @@ function vertical(dir) {
 var arrow = {left: 37, up: 38, right: 39, down: 40};
 var handled = false;
 
-get: function (p, dir) {
-    return this.cells[p.x + (DIRX[dir]) || 0][p.y + (DIRY[dir] || 0)].object;
+Game.prototype = {
+
+    get: function (p, dir) {
+        return this.cells[p.x + (DIRX[dir]) || 0][p.y + (DIRY[dir] || 0)].object;
+    },
+    set: function (p, o, dir) {var cell = this.cells[p.x + (DIRX[dir]) || 0][p.y + (DIRY[dir] || 0)]; cell.object = o; cell.frame = this.frame; this.publish('cell', cell)},
+
+    isPlayer: function(p, dir) { var o = this.get(p, dir); return OBJECT.PLAYER === o;}
 }
-,
 
 
 //Sprite IMG and code
