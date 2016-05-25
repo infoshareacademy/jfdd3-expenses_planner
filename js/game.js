@@ -14,18 +14,17 @@ $('#sendForm').on('click', function() {
     $gameBoard = createBoard(10, 10);
     $box.append($gameBoard);
 
+
+
+var x = Math.round(Math.random()*10);
+var y = Math.round(Math.random()*10);
+
+    $('td[x =' + x + '][y = ' + y + ']', $gameBoard).css({background: '#c00'});
+
     $('#game').css({
 
         height:"100vh"
     });
-
-});
-
-var x = Math.round(Math.random()*10)
-var y = Math.round(Math.random()*10)
-
-$('td[x=' + x + '][y =' + y + '])', $gameboard).css({background: '#c00;'});
-
 
 function createBoard(height, width) {
     var $board = $('<table>');
@@ -42,6 +41,14 @@ function createBoard(height, width) {
     }
     return $board;
 }
+
+
+
+
+});
+
+
+
 
 
 
