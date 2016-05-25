@@ -21,6 +21,11 @@ $('#sendForm').on('click', function() {
 
 });
 
+var x = Math.round(Math.random()*10)
+var y = Math.round(Math.random()*10)
+
+$('td[x=' + x + '][y =' + y + '])', $gameboard).css({background: '#c00;'});
+
 
 function createBoard(height, width) {
     var $board = $('<table>');
