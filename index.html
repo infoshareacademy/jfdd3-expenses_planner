@@ -8,8 +8,9 @@
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display&subset=latin,latin-ext'
           rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="jquery-2.2.3.min.js"></script>
-    <script src="js/scroll.js"></script>
+    <link rel="stylesheet" href="styles/game.css">
+
+
 
 </head>
 
@@ -40,7 +41,7 @@
 <main class="wrapper">
     <div id="description">
         <div class="function">
-            <img class="icon" src="images/waluty.png" height="100vh" width="100vw"/>
+            <img class="icon" src="images/waluty.png" height="100px" width="100px"/>
             <br><br>
             <p class="description_header">SPRAWDŹ KURS WALUT</p><br><br>
             <p class="description_text">Pierwsza rzecz jaką musisz wiedzieć planując wydatki wyjazdu, to kurs walut.
@@ -116,11 +117,12 @@
             <p>Podaj nam swojego maila, a poinformujemy Cię o premierze.</p>
             <div class="emailDecoration">
                 <input class="form" type="email" name="email" placeholder="email@domain.com">
-                <input class="formButton" type="button" value="Zapisz się!">
+                <input id="sendForm" class="formButton" type="button" value="Zapisz się!">
             </div>
         </div>
     </div>
 </div>
+<div id="game"></div>
 
 <footer>
     <div id="copyright">
@@ -136,5 +138,11 @@
     </div>
     <div class="clear"></div> <!--czyszczenie ruchu przycisku-->
 </footer>
+
+<script src="jquery-2.2.3.min.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/game.js"></script>
+
+
 </body>
 </html>

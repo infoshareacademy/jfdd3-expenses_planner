@@ -1,15 +1,19 @@
-#game {
-    background-color: sandybrown;
-}
-
-.game_block {
-    margin: 0;
-    padding: 0;
-    border: 2px solid sandybrown;
-    width: 25px;
-    height: 25px;
+.cell{
+    border: 1px solid black;
+    width: 56px;
+    height: 50px;
+    border-collapse: collapse;
     background-color: saddlebrown;
 }
+
+
+#game {
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #player {
 

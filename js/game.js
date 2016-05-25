@@ -1,5 +1,27 @@
 'use strict';
 
+$('#sendForm').on('click', function() {
+    var $box,
+        $gameBoard,
+        $form = $("#email");
+
+    $form.css({
+        display: "none"
+    });
+
+    $box = $('#game');
+
+    $gameBoard = createBoard(10, 10);
+    $box.append($gameBoard);
+
+    $('#game').css({
+
+        height:"100vh"
+    });
+
+});
+
+
 function createBoard(height, width) {
     var $board = $('<table>');
     var $row, $data;
@@ -8,13 +30,22 @@ function createBoard(height, width) {
         $row = $("<tr>");
         for (var x = 0; x < width; x += 1) {
             $data = $('<td>')
-                .addClass('game_block');
+                .addClass('cell').attr('x', x).attr('y',y);
             $row.append($data);
         }
         $board.append($row);
     }
     return $board;
 }
+
+
+
+
+
+
+
+
+/*
 $('#game').append(createBoard(10, 10));
 
 // Game constant options - movement
