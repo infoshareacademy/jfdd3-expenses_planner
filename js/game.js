@@ -28,7 +28,10 @@ var DIR = {UP: 0, UPRIGHT: 1, RIGHT: 2, DOWNRIGHT: 3, DOWN: 4, DOWNLEFT: 5, LEFT
 var DIRX = [   0,          1,        1,            1,       0,          -1,      -1,        -1];
 var DIRY = [  -1,         -1,        0,            1,       1,           1,       0,        -1];
 
-var Point = function (x, y, dir)
+var Point = function (x, y, dir) {
+    this.x = x + (DIRX[dir] || 0);
+    this.y = y + (DIRY[dir] || 0);
+};
 
 //var dir = DIR.UP;
 //var newPosition = {x : DIRX[dir], y: DIRX[dir] }
@@ -38,6 +41,9 @@ function vertical(dir) {return (dir === DIR.UP) || (dir === DIR.DOWN)}
 
 var arrow = {left: 37, up: 38, right: 39, down:40 };
 var handled = false;
+
+get: function(p, dir) { return this.cells[p.x + (DIRX[dir]) || 0][p.y + (DIRY[dir] || 0)].object;},
+
 
 //Sprite IMG and code
 
