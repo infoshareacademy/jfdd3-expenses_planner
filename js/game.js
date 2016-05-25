@@ -14,13 +14,27 @@ $('#sendForm').on('click', function() {
     $gameBoard = createBoard(10, 10);
     $box.append($gameBoard);
 
+    //var newarray = [];
+    //X.append(newarray)
+    //console.log(newarray)
+
+
+    var x =  Math.round(Math.random()*10);
+    var y =  Math.round(Math.random()*10);
+
+  $('td[x=' + x + '][y=' + y + ']', $gameBoard).css({ background: '#c00'});
+
+
     $('#game').css({
 
         height:"100vh"
     });
 
 });
-
+//Math.round(Math.random()* x.length)
+//Math.round(Math.random()* y.length)
+//
+//x.splice(3,1)
 
 function createBoard(height, width) {
     var $board = $('<table>');
@@ -40,7 +54,10 @@ function createBoard(height, width) {
 
 
 
-
+//Math.round(Math.random()* x.length)
+//Math.round(Math.random()* y.length)
+//
+//x.splice(3,1)
 
 
 
