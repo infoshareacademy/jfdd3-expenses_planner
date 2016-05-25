@@ -14,12 +14,16 @@ $('#sendForm').on('click', function() {
     $gameBoard = createBoard(10, 10);
     $box.append($gameBoard);
 
+for () {
+    var x = Math.round(Math.random() * 10);
+    var y = Math.round(Math.random() * 10);
+    var diament = function () {
+        $('td[x =' + x + '][y = ' + y + ']', $gameBoard).css({background: '#ff0'});
+    }
 
+    y.splice(y, 1);
+}
 
-var x = Math.round(Math.random()*10);
-var y = Math.round(Math.random()*10);
-
-    $('td[x =' + x + '][y = ' + y + ']', $gameBoard).css({background: '#c00'});
 
     $('#game').css({
 
