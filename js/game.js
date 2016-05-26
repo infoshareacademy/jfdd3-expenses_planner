@@ -14,6 +14,13 @@ $('#sendForm').on('click', function() {
     $gameBoard = createBoard(10, 10);
     $box.append($gameBoard);
 
+var x = Math.round(Math.random()*10);
+    var y = Math.round(Math.random()*10);
+
+  $('td[x=' + x +'][y=' + x + ']').css ({ "background-color": "red"});
+
+
+
     $('#game').css({
 
         height:"100vh"
