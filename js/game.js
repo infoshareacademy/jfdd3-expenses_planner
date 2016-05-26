@@ -14,10 +14,26 @@ $('#sendForm').on('click', function() {
     $gameBoard = createBoard(10, 10);
     $box.append($gameBoard);
 
-var x = Math.round(Math.random()*10);
-    var y = Math.round(Math.random()*10);
 
-  $('td[x=' + x +'][y=' + x + ']').css ({ "background-color": "red"});
+//
+// var x = Math.round(Math.random()*10);
+//     var y = Math.round(Math.random()*10);
+
+
+var coords = [];
+for (var i = 0; i <= 6; i=i+1) {
+    var z =[1,2,3,4,5,6,7,8,9,10];
+   var x= z.splice(Math.round(Math.random()*z.length),1)[0];
+    var y = Math.round(Math.random()*z.length);
+    coords.push({x: x, y: y});
+}
+coords.forEach(function (item) {
+  // $('td[x=' + x +'][y=' + y + ']').css ({ "background-color": "red"});
+  $('td[x=' + item.x +'][y=' + item.y + ']').css ({ "background-color": "red"});
+
+})
+
+
 
 
 
