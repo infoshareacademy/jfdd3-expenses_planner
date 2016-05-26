@@ -21,16 +21,16 @@ $('#sendForm').on('click', function () {
 
 
     var coords = [];
-    var availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9,];
+    var availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     var availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     for (var i = 0; i < 6; i++) {
         var indexX = Math.round(Math.random() * (availableXs.length - 1));
         console.log(indexX);
-        var x = availableXs.splice(indexX, 2)[0];
+        var x = availableXs.splice(indexX, 1)[0];
 
         var indexY = Math.round(Math.random() * (availableYs.length - 1));
         console.log(indexY);
-        var y = availableYs.splice(indexY, 2) [0];
+        var y = availableYs.splice(indexY, 1) [0];
         coords.push({x: x, y: y});
     }
 
