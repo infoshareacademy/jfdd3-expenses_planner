@@ -67,10 +67,15 @@ $('#sendForm').on('click', function () {
 
     var moves = {
         left: function (node) {
+            //console.log('posX', $(node).attr('x'));
+
             return $(node).prev();
         },
         right: function (node) {
             return $(node).next();
+        },
+        down: function (node) {
+            return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
         }
     };
 
@@ -82,9 +87,26 @@ $('#sendForm').on('click', function () {
         console.log(keyCode, event);
 
         if (keyCode === 37) {
+            if ($player.attr('x') > 0){
             $player.removeClass('player').addClass('black');
             $player = moves.left($player);
             $player.addClass('player');
+            }
+        }
+        else if (keyCode === 39) {
+            if ($player.attr('x') < 9){
+            $player.removeClass('player').addClass('black');
+            $player = moves.right($player);
+            $player.addClass('player');
+            }
+        }
+        else if (keyCode === 40) {
+
+                if ($player.attr('y') < 9){
+            $player.removeClass('player').addClass('black');
+            $player = moves.down($player);
+            $player.addClass('player');
+                }
         }
     });
 
