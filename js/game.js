@@ -35,6 +35,7 @@ $('#sendForm').on('click', function () {
     }
 
 
+
     console.log(coords);
     coords.forEach(function (item) {
         // $('td[x=' + x +'][y=' + y + ']').css ({ "background-color": "red"});
