@@ -14,7 +14,9 @@
     align-items: center;
 }
 
-
-#player {
-
+.black {
+    background: #000;
+}
+.player {
+    background: #00c;
 }

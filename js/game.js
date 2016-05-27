@@ -1,6 +1,14 @@
 'use strict';
 
-$('#sendForm').on('click', function () {
+$(document).ready(function () {
+    if (window.location.hash === '#game') {
+        startGame();
+    }
+});
+
+$('#sendForm').on('click', startGame);
+
+function startGame () {
     var $box,
         $gameBoard,
         $form = $("#email");
@@ -14,13 +22,43 @@ $('#sendForm').on('click', function () {
     $gameBoard = createBoard(10, 10);
     $box.append($gameBoard);
 
-    $('#game').css({
+    $gameBoard.find('td').eq(4).addClass('player');
 
+    // prevent arrow down to scroll page
+    $(document).on('keydown', function (event) {
+        if (event.which === 40) {
+            return false;
+        }
+    });
+
+    var moves = {
+        left: function (node) {
+            return $(node).prev();
+        },
+        right: function (node) {
+            return $(node).next();
+        }
+    };
+
+    var $player = $gameBoard.find('.player');
+
+    // move player
+    $(document).on('keyup', function (event) {
+        var keyCode = event.which;
+        console.log(keyCode, event);
+
+        if (keyCode === 37) {
+            $player.removeClass('player').addClass('black');
+            $player = moves.left($player);
+            $player.addClass('player');
+        }
+    });
+
+    $box.css({
         height: "100vh"
     });
 
-});
-
+}
 
 function createBoard(height, width) {
     var $board = $('<table>');
