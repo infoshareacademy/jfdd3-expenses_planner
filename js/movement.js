@@ -8,7 +8,7 @@
 // 5  4  3
 
 var DIR = {UP: 0, UPRIGHT: 1, RIGHT: 2, DOWNRIGHT: 3, DOWN: 4, DOWNLEFT: 5, LEFT: 6, UPLEFT: 7};
-var DIRX = [0, 1, 1, 1, 0, -1, -1, -1];
+var DIRX = [   0,          1,        1,            1,       0,          -1,      -1,        -1];
 var DIRY = [-1, -1, 0, 1, 1, 1, 0, -1];
 
 var Point = function (x, y, dir) {
@@ -43,7 +43,7 @@ Game.prototype = {
 //Sprite IMG and code
 
 
-//Player Script
+//Player Script key binding
 
 $(document).keydown(function (ev) {
     var keyCode = ev.keyCode || ev.which;
@@ -99,7 +99,7 @@ $(document).keyup(function (ev) {
     }
 );
 
-//Player Movement
+//Player Key-Biding movement Movement
 
 var moving = {
     dir: DIR.NONE,
@@ -108,6 +108,7 @@ var moving = {
     startUp: function () {
         this.up = true;
         this.dir = DIR.UP;
+        return up = false;
     },
     startDown: function () {
         this.down = true;
