@@ -52,10 +52,10 @@ $('#sendForm').on('click', function () {
             backgroundImage: 'url(images/icons/diament.jpg)',
             backgroundSize: '100%'
 
-    });
+    })});
 
 
-    $('#game').css({
+    //$('#game').css({
     $gameBoard.find('td').eq(4).addClass('player');
 
     // prevent arrow down to scroll page
@@ -114,6 +114,7 @@ $('#sendForm').on('click', function () {
         height: "100vh"
     });
 
+        //}
 });
 
 
@@ -131,7 +132,7 @@ function createBoard(height, width) {
         $board.append($row);
     }
     return $board;
-}})
+}}
 
 
 /*
