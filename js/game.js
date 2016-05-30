@@ -26,7 +26,10 @@ function startGame () {
 
     // prevent arrow down to scroll page
     $(document).on('keydown', function (event) {
-        if (event.which === 40) {
+        if (event.which === 38) {
+            return false;
+        }
+        else if (event.which === 40) {
             return false;
         }
     });
