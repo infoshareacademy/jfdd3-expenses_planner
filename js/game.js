@@ -9,7 +9,6 @@ $(document).ready(function () {
 $('#sendForm').on('click', startGame);
 
 function startGame () {
-$('#sendForm').on('click', function () {
     var $box,
         $gameBoard,
         $form = $("#email");
@@ -120,8 +119,7 @@ $('#sendForm').on('click', function () {
         height: "100vh"
     });
 
-        //}
-});
+}
 
 
 function createBoard(height, width) {
@@ -138,7 +136,7 @@ function createBoard(height, width) {
         $board.append($row);
     }
     return $board;
-}}
+}
 
 
 /*
