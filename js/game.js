@@ -1,5 +1,7 @@
 'use strict';
 
+var diamenty;
+
 $(document).ready(function () {
     if (window.location.hash === '#game') {
         startGame();
@@ -31,7 +33,7 @@ $('#sendForm').on('click', function () {
 
     var coords = [];
     var availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
     for (var i = 0; i < 6; i++) {
         var indexX = Math.round(Math.random() * (availableXs.length - 1));
         console.log(indexX);
@@ -40,6 +42,11 @@ $('#sendForm').on('click', function () {
         var indexY = Math.round(Math.random() * (availableYs.length - 1));
         console.log(indexY);
         var y = availableYs.splice(indexY, 1) [0];
+        if(x==4 && y ==0){
+            i--;
+            continue;
+        }
+
         coords.push({x: x, y: y});
     }
 
@@ -48,11 +55,7 @@ $('#sendForm').on('click', function () {
     console.log(coords);
     coords.forEach(function (item) {
         // $('td[x=' + x +'][y=' + y + ']').css ({ "background-color": "red"});
-        $('td[x=' + item.x + '][y=' + item.y + ']').css({
-            backgroundImage: 'url(images/icons/diament.jpg)',
-            backgroundSize: '100%'
-
-    })});
+        $('td[x=' + item.x + '][y=' + item.y + ']').addClass('diament')});
 
 
     //$('#game').css({
@@ -97,24 +100,45 @@ $('#sendForm').on('click', function () {
             if ($player.attr('x') > 0){
             $player.removeClass('player').addClass('black');
             $player = moves.left($player);
-            $player.addClass('player');
+            $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 39) {
             if ($player.attr('x') < 9){
             $player.removeClass('player').addClass('black');
             $player = moves.right($player);
-            $player.addClass('player');
+            $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 40) {
             if ($player.attr('y') < 9){
             $player.removeClass('player').addClass('black');
             $player = moves.down($player);
-            $player.addClass('player');
+            $player.removeClass('diament').addClass('player');
                 }
         }
+
+    checkDiamonds($player);
+
+
     });
+
+    function checkDiamonds(player){
+
+        diamenty = $('.diament').length;
+        if(diamenty){
+
+        if (player.attr('y')==9){
+            $('#score').html('PRZEGRALES !');
+            $(document).off('keyup');
+        }
+            else
+            $('#score').html('Pozostało '+diamenty+' diamentów');
+            }
+        else
+            $('#score').html('Wygraleś gratulacje');
+    }
+
 
     $box.css({
         height: "100vh"
@@ -140,21 +164,3 @@ function createBoard(height, width) {
     return $board;
 }}
 
-
-/*
- $('#game').append(createBoard(10, 10));
- $('#game').keydown(function (e) {
- switch (e.which) {
- case 37: //lewo
- console.log(left);
- case 38:
- console.log(up);
- case 39:
- console.log(right);
- case 40:
- console.log(down);
- default:
- return; // no control on rest keys
- }
- e.preventDefault(); //blocking keys
- });*/
