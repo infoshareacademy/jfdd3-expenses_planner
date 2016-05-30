@@ -8,10 +8,15 @@ $(document).ready(function () {
 
 $('#sendForm').on('click', startGame);
 
+var myMusic;
+
 function startGame () {
     var $box,
         $gameBoard,
         $form = $("#email");
+
+    myMusic = new Audio('Dig-It.mp3'); //Thanks PuffballsUnited for track
+    myMusic.play();
 
     $form.css({
         display: "none"
