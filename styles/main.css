@@ -168,13 +168,15 @@ main {
 .member {
     width: 500px;
     height: 500px;
-    display: inline-block;
     align-content: center;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    display: none;
 }
-
+.visible {
+    display: inline-block ;
+}
 #left_scroll, #right_scroll {
     color:white;
     font-size: 40px;
