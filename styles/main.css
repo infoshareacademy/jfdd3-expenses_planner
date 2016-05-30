@@ -156,16 +156,35 @@ main {
     background-color: lightgrey;
 }
 
-.members {
-    width: 220px;
-    height: 550px;
+#carousel {
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.member {
+    width: 500px;
+    height: 500px;
     margin: 0 20px;
     display: inline-block;
     align-content: center;
     background-color: white;
     border-radius: 10px;
-    float: left;
     margin-left: 10px;
+    overflow: hidden;
+}
+
+#left_scroll, #right_scroll {
+    color:white;
+    font-size: 40px;
+    font-weight: bold;
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    opacity:0.5;
 }
 
 .avatar {

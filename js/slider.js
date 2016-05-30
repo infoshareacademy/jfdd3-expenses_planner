@@ -1,4 +1,13 @@
 /**
  * Created by gsparzak on 30.05.16.
  */
-document.ready()
+
+
+
+var $carousel = $('#carousel');
+var $slides = $('.member');
+
+setInterval(function(){
+
+}, 1000)
+
