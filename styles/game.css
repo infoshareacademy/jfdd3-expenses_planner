@@ -12,11 +12,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: column;
+
 }
 
 .black {
     background: #000;
 }
+
+
+.diament{
+    background-image: url(../images/icons/diament.jpg);
+    background-size: 100%;
+
+}
 .player {
     background: #00c;
 }
+
