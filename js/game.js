@@ -135,11 +135,12 @@ function startGame () {
         if (player.attr('y')==9){
             $('#score').html('PRZEGRALES !');
             $(document).off('keyup');
+            myMusic.pause();
         }
-            else
+           else
             $('#score').html('Pozostało '+diamenty+' diamentów');
             }
-        else
+            else
             $('#score').html('Wygraleś gratulacje');
     }
 
