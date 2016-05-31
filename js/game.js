@@ -1,23 +1,44 @@
 'use strict';
 
-var diamenty;
 
 $(document).ready(function () {
     if (window.location.hash === '#game') {
         startGame();
     }
 });
+var $box,
+    $gameBoard,
+    diamenty,
+    $form = $("#email"),
+    myMusic,
+    coords = [],
+    availableXs = [],
+    availableYs = [];
+
+var moves = {
+    //move left
+    left: function (node) {
+        //console.log('posX', $(node).attr('x')); if buged check
+        return $(node).prev();
+    },
+    //move right
+    right: function (node) {
+        return $(node).next();
+    },
+    //move down
+    down: function (node) {
+        return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
+    }
+};
+
+
 
 $('#sendForm').on('click', startGame);
 
-var myMusic;
 
 function startGame () {
-    var $box,
-        $gameBoard,
-        $form = $("#email");
 
-    myMusic = new Audio('Dig-It.mp3'); //Thanks PuffballsUnited for track
+    myMusic = new Audio('music/Dig-It.mp3'); //Thanks PuffballsUnited for track
     myMusic.play();
 
     $form.css({
@@ -25,19 +46,21 @@ function startGame () {
     });
 
     $box = $('#game');
-
     $gameBoard = createBoard(10, 10);
-    $box.append($gameBoard);
+    $box.empty().append($gameBoard);
+    coords = [];
+    availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
+    availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
 
+
+    $box.css({
+        height: "100vh"
+    });
 
 //
 // var x = Math.round(Math.random()*10);
 //     var y = Math.round(Math.random()*10);
 
-
-    var coords = [];
-    var availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
     for (var i = 0; i < 6; i++) {
         var indexX = Math.round(Math.random() * (availableXs.length - 1));
         console.log(indexX);
@@ -54,15 +77,11 @@ function startGame () {
         coords.push({x: x, y: y});
     }
 
-
-
     console.log(coords);
     coords.forEach(function (item) {
         // $('td[x=' + x +'][y=' + y + ']').css ({ "background-color": "red"});
         $('td[x=' + item.x + '][y=' + item.y + ']').addClass('diament')});
 
-
-    //$('#game').css({
     $gameBoard.find('td').eq(4).addClass('player');
 
     // prevent arrow down to scroll page
@@ -76,22 +95,6 @@ function startGame () {
             return false;
         }
     });
-
-    var moves = {
-        //move left
-        left: function (node) {
-            //console.log('posX', $(node).attr('x')); if buged check
-            return $(node).prev();
-        },
-        //move right
-        right: function (node) {
-            return $(node).next();
-        },
-        //move down
-        down: function (node) {
-            return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
-        }
-    };
 
     var $player = $gameBoard.find('.player');
 
@@ -124,32 +127,38 @@ function startGame () {
 
     checkDiamonds($player);
 
-
     });
 
     function checkDiamonds(player){
 
         diamenty = $('.diament').length;
+
         if(diamenty){
 
-        if (player.attr('y')==9){
-            $('#score').html('PRZEGRALES !');
-            $(document).off('keyup');
-            myMusic.pause();
-        }
-           else
-            $('#score').html('Pozostało '+diamenty+' diamentów');
+            if (player.attr('y')==9){
+                $('#score').html('PRZEGRALES !');
+                $(document).off('keyup');
+                myMusic.pause();
+                window.alert('Przegrałeś');
+                startGame().reload();
             }
-            else
+            else{
+                $('#score').html('Pozostało '+diamenty+' diamentów');
+            return}
+        }
+        else if ($('.diamenty').length === 0){
             $('#score').html('Wygraleś gratulacje');
+        $(document).off('keyup');
+        myMusic.pause();
+        window.alert('Wygrałeś :)');
+        startGame().reload();}
     }
-
 
     $box.css({
         height: "100vh"
     });
-
 }
+
 
 
 function createBoard(height, width) {
