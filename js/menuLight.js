@@ -1,12 +1,11 @@
+
 'use strict';
 
 $(document).ready(function () {
     $('.zajawa').click(function () {
-        $(this).css({
-            color:"black"
+        $(this).find('a').css({
+            color:"orange"
         })
     });
-    console.log("hello");
+
 });
-
-
