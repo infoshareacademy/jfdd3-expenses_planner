@@ -1,6 +1,5 @@
 'use strict';
 
-//
 // $(document).ready(function () {
 //     $('.zajawa').click(function () {
 //         if ($(this).addClass('orange')) {
@@ -8,16 +7,14 @@
 //         }
 //     })});
 // });
-// $(document).ready(function () {
-//     $('.zajawa').click(function () {
-//         $(this).addClass('orange');
-//         $('.zajawa.orange').click(function () {
-//             $(this).removeClass('orange');
-//         });
-//     });
-//
-//
-// });
+$(document).ready(function () {
+    $('.zajawa').click(function () {
+        $('.zajawa.orange').removeClass('orange');
+        $(this).addClass('orange');
+    });
+
+
+});
 
 // if (keyCode === 37) {
 //     if ($player.attr('x') > 0){
