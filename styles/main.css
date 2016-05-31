@@ -189,6 +189,8 @@ main {
 
 .avatar {
     padding-bottom: 20px;
+    height:100px;
+    width:100px;
 }
 
 /*FOOTER*/

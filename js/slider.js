@@ -1,51 +1,41 @@
-/**
- * Created by gsparzak on 30.05.16.
- */
-
-$('#right_scroll').click(function (){
-    var a = $x.indexOf(function(item) {
-        return item.hasClass('visible')
-    });
-        $x[a].removeClass('visible');
-            // .next()
-        if (a<3) {
-            $x[a + 1].addClass('visible');
-        } else {
-            $x[0].addClass('visible')
-        }
-});
+'use strict';
 
 $('#left_scroll').click(function (){
-    $x.find(function(item) {
-        return item.hasClass('visible')
-    }).removeClass('visible').prev().addClass('visible');
+    $slides.filter('.visible').removeClass('visible').prev().addClass('visible');
+    //order -= 1;
+    if ($slides.filter('.visible').length === 0) {
+        $slides.last().addClass('visible');
+    }
 });
 
-    /*$x[y+1].addClass('visible');
-    Sx[y].removeClass('visible');*/
+$('#right_scroll').click(function (){
+    $slides.filter('.visible').removeClass('visible').next().addClass('visible');
+    //order += 1;
+    if ($slides.filter('.visible').length === 0) {
+        $slides.first().addClass('visible');
+    }
+});
 
-
-var $carousel = $('#carousel');
-// var $slides = $('.member'); jQuery nie chce wykonać funkcji $slides[order].addClass...
-var order = 1;
-var $x = [$('.Natalia'), $('.Grzegorz'), $('.Krystian'), $('.Dawid')];
+var $slides = $('.member');
+//var order = 1;
 
 setInterval(function(){
-    if (order === 0){
-        $x[3].removeClass('visible');
-    }
-    else {
-        $x[order-1].removeClass('visible');
-    }
-
-    $x[order].addClass('visible');
-
-    if(order === 3) {
-        order = 0;
-    }else {
-        order++;
-    }
-}, 5000);
+    //if (order === 0){
+    //    $slides.eq(3).removeClass('visible');
+    //}
+    //else {
+    //    $slides.eq(order-1).removeClass('visible');
+    //}
+    //
+    //$slides.eq(order).addClass('visible');
+    //
+    //if(order === 3) {
+    //    order = 0;
+    //}else {
+    //    order++;
+    //}
+    $('#right_scroll').click();
+}, 3000);
 
 
 
