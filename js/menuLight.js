@@ -15,7 +15,7 @@ $(document).ready(function () {
 
 
 });
-
+// dobry
 // if (keyCode === 37) {
 //     if ($player.attr('x') > 0){
 //         $player.removeClass('player').addClass('black');
