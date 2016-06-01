@@ -296,5 +296,6 @@ a.backtotop:hover {
 }
 
 .orange {
-    color: orange;
+    color: red;
+    font-size: larger;
 }
