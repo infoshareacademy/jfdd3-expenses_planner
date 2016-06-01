@@ -145,6 +145,10 @@ main {
     padding: 10px;
 }
 
+.hide{
+    opacity:0
+}
+
 /*TEAM*/
 
 #team {
@@ -292,5 +296,6 @@ a.backtotop:hover {
 }
 
 .orange {
-    color: orange;
+    color: red;
+    font-size: larger;
 }
