@@ -31,3 +31,24 @@
     background: #00c;
 }
 
+#score {
+ background-color: black;
+ width: 100px;
+}
+
+.gamebox{
+ display: flex;
+ flex-flow: row;
+    height: 100vh;
+    width: auto;
+}
+
+.leftpadding {
+    width: 300px;
+    background-color: #0000cc;
+}
+
+.rightpadding {
+    width: 300px;
+    background-color: #0000cc;
+}
