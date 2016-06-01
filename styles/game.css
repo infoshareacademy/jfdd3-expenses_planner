@@ -70,5 +70,11 @@ table {
 }
 
 .white {
-    background-color: white;
+    background-image: url(../images/downmine.png);
+    background-size: cover;
+}
+
+.downmine {
+    background-image: url(../images/downminewithout.png);
+    background-size: cover;
 }

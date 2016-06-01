@@ -120,23 +120,23 @@ function startGame () {
 
         if (keyCode === 37) {
             if ($player.attr('x') > 0){
-            $player.removeClass('player').addClass('black');
+            $player.removeClass('player white').addClass('black');
             $player = moves.left($player);
             $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 39) {
             if ($player.attr('x') < 9){
-            $player.removeClass('player').addClass('black');
+            $player.removeClass('player white').addClass('black');
             $player = moves.right($player);
             $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 40) {
             if ($player.attr('y') < 9){
-            $player.removeClass('player').addClass('black white');
+            $player.removeClass('player white').addClass('downmine');
             $player = moves.down($player);
-            $player.removeClass('diament').addClass('player');
+            $player.removeClass('diament').addClass('white');
                 }
         }
 
