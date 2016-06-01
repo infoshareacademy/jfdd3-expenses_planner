@@ -16,16 +16,20 @@
     flex-flow: column;
 
 }
+.downmine {
+    background-image: url(../images/downminewithout.png);
+    background-size: cover;
+}
 
 .black {
-    background: #000;
-    background-image: url(../images/mine.png);
+
+    background-image: url(../images/downminewithout.png);
     background-size: cover;
 }
 
 
 .diament{
-    background-image: url(../images/icons/diament.jpg);
+    background-image: url(../images/diamentground.png);
     background-size: 100%;
 
 }
@@ -37,7 +41,7 @@
 
 #score {
  background-color: black;
- width: auto;
+ width: 75vw;
  text-align: center;
  color: aliceblue;
 }
@@ -46,14 +50,14 @@
  display: flex;
  flex-flow: row;
  justify-content: center;
-    width: auto;
+    width: 75vw;
 }
 
 .leftpadding {
-    padding: 1vw;
     color: white;
     justify-content: center;
     background-color: black;
+
 }
 
 .rightpadding {
@@ -61,10 +65,14 @@
     background-color: black;
 }
 #gamefield{
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
 }
 
 table {
+    width: 25vw;
     border-spacing: 0;
     border-color: saddlebrown;
 }
@@ -74,7 +82,3 @@ table {
     background-size: cover;
 }
 
-.downmine {
-    background-image: url(../images/downminewithout.png);
-    background-size: cover;
-}

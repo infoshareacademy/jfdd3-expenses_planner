@@ -63,8 +63,8 @@ function startGame () {
     availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
     $('#gamefield').css({"height": "100vh" });
     $('#score').css({"padding-top": "10vh" });
-    $('.leftpadding').css({"width": "10vw" });
-    $('.rightpadding').css({"width": "10vw" });
+    $('.leftpadding').css({"width": "25vw" });
+    $('.rightpadding').css({"width": "25vw" });
     $('#score').html('Zbierz wszystkie diamenty');
     $('.leftpadding').html('Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty. Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.');
 
@@ -134,7 +134,7 @@ function startGame () {
         }
         else if (keyCode === 40) {
             if ($player.attr('y') < 9){
-            $player.removeClass('player white').addClass('downmine');
+            $player.removeClass('player white').addClass('black');
             $player = moves.down($player);
             $player.removeClass('diament').addClass('white');
                 }
