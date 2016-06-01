@@ -7,8 +7,6 @@ $(document).ready(function () {
     }
 });
 var $box,
-    $mediumbox,
-    $bigbox,
     $gameBoard,
     diamenty,
     $form = $("#email"),
@@ -45,32 +43,21 @@ function startGame () {
         display: "none"
     });
 
-    //$bigbox = $('#gamefield');
-    //
-    //$bigbox.empty();
-    //
-    //$bigbox.css({
-    //    height: "100vh"
-    //});
-
-    //$mediumbox = $('');
-
     $box = $('#game');
     $gameBoard = createBoard(10, 10);
     $box.empty().append($gameBoard);
     coords = [];
     availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
+
+    //Create game view
     $('#gamefield').css({"height": "100vh" });
     $('#score').css({"padding-top": "10vh" });
+    $('.gamefooter').css({"padding-bottom": "10vh" });
     $('.leftpadding').css({"width": "25vw" });
     $('.rightpadding').css({"width": "25vw" });
     $('#score').html('Zbierz wszystkie diamenty');
     $('.leftpadding').html('Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty. Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.');
-
-    //$box.css({
-    //    height: "100vh"
-    //});
 
 //
 // var x = Math.round(Math.random()*10);
@@ -120,23 +107,23 @@ function startGame () {
 
         if (keyCode === 37) {
             if ($player.attr('x') > 0){
-            $player.removeClass('player white').addClass('black');
+            $player.removeClass('player cell').addClass('black');
             $player = moves.left($player);
             $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 39) {
             if ($player.attr('x') < 9){
-            $player.removeClass('player white').addClass('black');
+            $player.removeClass('player cell').addClass('black');
             $player = moves.right($player);
             $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 40) {
             if ($player.attr('y') < 9){
-            $player.removeClass('player white').addClass('black');
+            $player.removeClass('player cell').addClass('black');
             $player = moves.down($player);
-            $player.removeClass('diament').addClass('white');
+            $player.removeClass('diament').addClass('player');
                 }
         }
 
@@ -169,12 +156,7 @@ function startGame () {
         startGame().reload();}
     }
 
-    //$box.css({
-    //    height: "100vh"
-    //});
 }
-
-
 
 function createBoard(height, width) {
     var $board = $('<table>');

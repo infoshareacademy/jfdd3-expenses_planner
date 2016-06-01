@@ -22,9 +22,7 @@
 }
 
 .black {
-
-    background-image: url(../images/downminewithout.png);
-    background-size: cover;
+    background-color: black;
 }
 
 
@@ -72,9 +70,16 @@
 }
 
 table {
-    width: 25vw;
-    border-spacing: 0;
-    border-color: saddlebrown;
+    border-spacing: 0px;
+    border-style: none;
+    background-color: black;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border-spacing: 0px;
+    border-style: none;
 }
 
 .white {
@@ -82,3 +87,9 @@ table {
     background-size: cover;
 }
 
+.gamefooter {
+    background-color: black;
+    width: 75vw;
+    text-align: center;
+    color: aliceblue;
+}
