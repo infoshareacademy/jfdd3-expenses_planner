@@ -1,9 +1,10 @@
 .cell{
-    border: 1px solid black;
+    border: none;
     width: 56px;
     height: 50px;
     border-collapse: collapse;
-    background-color: saddlebrown;
+    background-image: url(../images/dirt.png);
+    background-size: cover;
 }
 
 
@@ -18,6 +19,8 @@
 
 .black {
     background: #000;
+    background-image: url(../images/mine.png);
+    background-size: cover;
 }
 
 
@@ -28,27 +31,44 @@
 }
 
 .player {
-    background: #00c;
+    background-image: url(../images/player.png);
+    background-size: cover;
 }
 
 #score {
  background-color: black;
- width: 100px;
+ width: auto;
+ text-align: center;
+ color: aliceblue;
 }
 
 .gamebox{
  display: flex;
  flex-flow: row;
-    height: 100vh;
+ justify-content: center;
     width: auto;
 }
 
 .leftpadding {
-    width: 300px;
-    background-color: #0000cc;
+    padding: 1vw;
+    color: white;
+    justify-content: center;
+    background-color: black;
 }
 
 .rightpadding {
-    width: 300px;
-    background-color: #0000cc;
+    width: auto;
+    background-color: black;
+}
+#gamefield{
+
+}
+
+table {
+    border-spacing: 0;
+    border-color: saddlebrown;
+}
+
+.white {
+    background-color: white;
 }

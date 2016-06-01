@@ -7,6 +7,8 @@ $(document).ready(function () {
     }
 });
 var $box,
+    $mediumbox,
+    $bigbox,
     $gameBoard,
     diamenty,
     $form = $("#email"),
@@ -31,8 +33,6 @@ var moves = {
     }
 };
 
-
-
 $('#sendForm').on('click', startGame);
 
 
@@ -45,17 +45,32 @@ function startGame () {
         display: "none"
     });
 
+    //$bigbox = $('#gamefield');
+    //
+    //$bigbox.empty();
+    //
+    //$bigbox.css({
+    //    height: "100vh"
+    //});
+
+    //$mediumbox = $('');
+
     $box = $('#game');
     $gameBoard = createBoard(10, 10);
     $box.empty().append($gameBoard);
     coords = [];
     availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
+    $('#gamefield').css({"height": "100vh" });
+    $('#score').css({"padding-top": "10vh" });
+    $('.leftpadding').css({"width": "10vw" });
+    $('.rightpadding').css({"width": "10vw" });
+    $('#score').html('Zbierz wszystkie diamenty');
+    $('.leftpadding').html('Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty. Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.');
 
-
-    $box.css({
-        height: "100vh"
-    });
+    //$box.css({
+    //    height: "100vh"
+    //});
 
 //
 // var x = Math.round(Math.random()*10);
@@ -119,7 +134,7 @@ function startGame () {
         }
         else if (keyCode === 40) {
             if ($player.attr('y') < 9){
-            $player.removeClass('player').addClass('black');
+            $player.removeClass('player').addClass('black white');
             $player = moves.down($player);
             $player.removeClass('diament').addClass('player');
                 }
@@ -154,9 +169,9 @@ function startGame () {
         startGame().reload();}
     }
 
-    $box.css({
-        height: "100vh"
-    });
+    //$box.css({
+    //    height: "100vh"
+    //});
 }
 
 
