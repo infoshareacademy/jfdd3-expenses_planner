@@ -10,21 +10,45 @@ var $box,
     $gameBoard,
     diamenty,
     $form = $("#email"),
+
     coords = [],
     availableXs = [],
     availableYs = [],
+
+    bouldercoords = [],
+    boulderavailableXs = [],
+    boulderavailableYs = [],
+
     moves = {
     //move left
     left: function (node) {
-        return $(node).prev();
+        var newPosition = $(node).prev();
+        console.log(newPosition);
+
+        return newPosition.hasClass('white') ? node : newPosition;
+
+        //return $(node).prev();
     },
     //move right
     right: function (node) {
-        return $(node).next();
+
+        var newPosition = $(node).next();
+        console.log(newPosition);
+
+        return newPosition.hasClass('white') ? node : newPosition;
+
+        //return $(node).next();
     },
     //move down
     down: function (node) {
-        return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
+        //if ($(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')').hasClass('white'); break );
+
+        var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
+        console.log(newPosition);
+
+        return newPosition.hasClass('white') ? node : newPosition;
+
+        //return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
     }
 };
 
@@ -53,9 +77,11 @@ function startGame () {
     availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
 
+
+
     //Create game view
-    $('#gamefield').css({"height": "100vh" });
-    $('#score').css({"padding-top": "10vh" });
+    $('#gamefield').css({"height": "auto" });
+    $('#score').css({"padding-top": "10vh"}, {"padding-bottom": "10vh"});
     $('.gamefooter').css({"padding-bottom": "10vh" });
     $('.leftpadding').css({"width": "20vw" });
     $('.rightpadding').css({"width": "20vw" });
@@ -78,14 +104,35 @@ function startGame () {
             i--;
             continue;
         }
-
         coords.push({x: x, y: y});
     }
 
     console.log(coords);
     coords.forEach(function (item) {
-        // $('td[x=' + x +'][y=' + y + ']').css ({ "background-color": "red"});
         $('td[x=' + item.x + '][y=' + item.y + ']').addClass('diament')});
+
+    bouldercoords = [];
+    boulderavailableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    //boulder code
+    for (var i = 0; i < 3; i++) {
+        var indexX = Math.round(Math.random() * (availableXs.length - 1));
+        console.log(indexX);
+        var x = boulderavailableXs.splice(indexX, 1)[0];
+
+        var indexY = Math.round(Math.random() * (availableYs.length - 1));
+        console.log(indexY);
+        var y = availableYs.splice(indexY, 1)[0];
+        if(x==4 && y ==0){
+            i--;
+            continue;
+        }
+        bouldercoords.push({x: x, y: y});
+    }
+
+    console.log(bouldercoords);
+    bouldercoords.forEach(function (item) {
+        $('td[x=' + item.x + '][y=' + item.y + ']').addClass('white')});
 
     $gameBoard.find('td').eq(4).addClass('player');
 

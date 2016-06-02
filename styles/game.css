@@ -1,7 +1,6 @@
 /*Outer line of Game Box*/
     #score {
         background-color: black;
-        width: 75vw;
         text-align: center;
         color: aliceblue;
     }
@@ -10,7 +9,7 @@
         display: flex;
         flex-flow: row;
         justify-content: center;
-        width: 75vw;
+        width: auto;
     }
 
     .leftpadding {
@@ -31,6 +30,8 @@
          align-items: center;
          justify-content: center;
          flex-flow: column;
+        width: auto;
+        background-color: black;
      }
 
     .gamefooter {
@@ -93,6 +94,6 @@
     }
 
     .white {
-        background-image: url(../images/game/downmine.png);
+        background-image: url(../images/game/boulder.png);
         background-size: cover;
     }
