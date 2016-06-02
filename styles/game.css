@@ -1,84 +1,99 @@
-.cell{
-    border: none;
-    width: 56px;
-    height: 50px;
-    border-collapse: collapse;
-    background-image: url(../images/dirt.png);
-    background-size: cover;
-}
+/*Outer line of Game Box*/
+    #score {
+        background-color: black;
+        text-align: center;
+        color: aliceblue;
+    }
+
+    .gamebox{
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        width: auto;
+    }
+
+    .leftpadding {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+
+    .rightpadding {
+        width: auto;
+        background-color: black;
+    }
+
+    #gamefield{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-flow: column;
+        width: auto;
+        background-color: black;
+     }
+
+    .gamefooter {
+          background-color: black;
+          width: 75vw;
+          text-align: center;
+          color: aliceblue;
+      }
+
+/*Game box*/
+    #game {
+        background-color: lightgrey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+    }
+
+    table {
+        border-spacing: 0px;
+        border-style: none;
+        background-color: black;
+    }
+
+    td {
+        width: 50px;
+        height: 50px;
+        border-spacing: 0px;
+        border-style: none;
+    }
+
+/*Game cell*/
+    .cell{
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-collapse: collapse;
+        background-image: url(../images/game/dirt.png);
+        background-size: cover;
+    }
+
+    .downmine {
+        background-image: url(../images/game/downminewithout.png);
+        background-size: cover;
+    }
+
+    .black {
+        background-color: black;
+    }
 
 
-#game {
-    background-color: lightgrey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
+    .diament{
+        background-image: url(../images/game/diamentground.gif);
+        background-size: 100%;
+    }
 
-}
-.downmine {
-    background-image: url(../images/downminewithout.png);
-    background-size: cover;
-}
+    .player {
+        background-image: url(../images/game/player.gif);
+        background-size: cover;
+    }
 
-.black {
-
-    background-image: url(../images/downminewithout.png);
-    background-size: cover;
-}
-
-
-.diament{
-    background-image: url(../images/diamentground.png);
-    background-size: 100%;
-
-}
-
-.player {
-    background-image: url(../images/player.png);
-    background-size: cover;
-}
-
-#score {
- background-color: black;
- width: 75vw;
- text-align: center;
- color: aliceblue;
-}
-
-.gamebox{
- display: flex;
- flex-flow: row;
- justify-content: center;
-    width: 75vw;
-}
-
-.leftpadding {
-    color: white;
-    justify-content: center;
-    background-color: black;
-
-}
-
-.rightpadding {
-    width: auto;
-    background-color: black;
-}
-#gamefield{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column;
-}
-
-table {
-    width: 25vw;
-    border-spacing: 0;
-    border-color: saddlebrown;
-}
-
-.white {
-    background-image: url(../images/downmine.png);
-    background-size: cover;
-}
-
+    .white {
+        background-image: url(../images/game/boulder.png);
+        background-size: cover;
+    }
