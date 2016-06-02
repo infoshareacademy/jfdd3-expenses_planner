@@ -10,15 +10,12 @@ var $box,
     $gameBoard,
     diamenty,
     $form = $("#email"),
-    myMusic,
     coords = [],
     availableXs = [],
-    availableYs = [];
-
-var moves = {
+    availableYs = [],
+    moves = {
     //move left
     left: function (node) {
-        //console.log('posX', $(node).attr('x')); if buged check
         return $(node).prev();
     },
     //move right
@@ -36,8 +33,14 @@ $('#sendForm').on('click', startGame);
 
 function startGame () {
 
-    myMusic = new Audio('music/Dig-It.mp3'); //Thanks PuffballsUnited for track
+    var myMusic;
+    myMusic = new Audio('music/Dig-It.mp3');
+    //Thanks PuffballsUnited for track
+    //author site: http://puffballsunited.newgrounds.com/
+    // CC ( You may not use this work for commercial purposes without making specific arrangements with the artist UNLESS your work is a web-based game or animation, in which case you may use this freely. )
+    //file: http://www.newgrounds.com/audio/listen/603041
     myMusic.play();
+    myMusic.loop = true;
 
     $form.css({
         display: "none"
@@ -137,7 +140,7 @@ function startGame () {
 
         if(diamenty){
 
-            if (player.attr('y')==9){
+            if (player.attr('y') == 9){
                 $('#score').html('PRZEGRALES !');
                 $(document).off('keyup');
                 myMusic.pause();
