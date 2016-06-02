@@ -136,7 +136,7 @@ main {
 .description_header {
     font-size: 23px;
     padding-bottom: 10px;
-    color:darkred;
+    color: darkred;
 }
 
 .description_text {
@@ -163,7 +163,7 @@ main {
     margin: 0 auto;
 }
 
-#carousel {
+.carousel {
     text-align: center;
     width: 700px;
     height: 400px;
@@ -187,7 +187,8 @@ main {
     display: inline-block ;
 }
 
-#left_scroll, #right_scroll {
+#left_scroll,
+#right_scroll {
     color:darkred;
     font-size: 40px;
     font-weight: bold;
