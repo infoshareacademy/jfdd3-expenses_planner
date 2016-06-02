@@ -1,36 +1,81 @@
 'use strict';
 
+
 $(document).ready(function () {
     if (window.location.hash === '#game') {
         startGame();
     }
 });
+var $box,
+    $mediumbox,
+    $bigbox,
+    $gameBoard,
+    diamenty,
+    $form = $("#email"),
+    myMusic,
+    coords = [],
+    availableXs = [],
+    availableYs = [];
+
+var moves = {
+    //move left
+    left: function (node) {
+        //console.log('posX', $(node).attr('x')); if buged check
+        return $(node).prev();
+    },
+    //move right
+    right: function (node) {
+        return $(node).next();
+    },
+    //move down
+    down: function (node) {
+        return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
+    }
+};
 
 $('#sendForm').on('click', startGame);
 
+
 function startGame () {
-    var $box,
-        $gameBoard,
-        $form = $("#email");
+
+    myMusic = new Audio('music/Dig-It.mp3'); //Thanks PuffballsUnited for track
+    myMusic.play();
 
     $form.css({
         display: "none"
     });
 
+    //$bigbox = $('#gamefield');
+    //
+    //$bigbox.empty();
+    //
+    //$bigbox.css({
+    //    height: "100vh"
+    //});
+
+    //$mediumbox = $('');
+
     $box = $('#game');
-
     $gameBoard = createBoard(10, 10);
-    $box.append($gameBoard);
+    $box.empty().append($gameBoard);
+    coords = [];
+    availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
+    availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
+    $('#gamefield').css({"height": "100vh" });
+    $('#score').css({"padding-top": "10vh" });
+    $('.leftpadding').css({"width": "25vw" });
+    $('.rightpadding').css({"width": "25vw" });
+    $('#score').html('Zbierz wszystkie diamenty');
+    $('.leftpadding').html('Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty. Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.');
 
+    //$box.css({
+    //    height: "100vh"
+    //});
 
 //
 // var x = Math.round(Math.random()*10);
 //     var y = Math.round(Math.random()*10);
 
-
-    var coords = [];
-    var availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     for (var i = 0; i < 6; i++) {
         var indexX = Math.round(Math.random() * (availableXs.length - 1));
         console.log(indexX);
@@ -39,22 +84,19 @@ function startGame () {
         var indexY = Math.round(Math.random() * (availableYs.length - 1));
         console.log(indexY);
         var y = availableYs.splice(indexY, 1) [0];
+        if(x==4 && y ==0){
+            i--;
+            continue;
+        }
+
         coords.push({x: x, y: y});
     }
-
-
 
     console.log(coords);
     coords.forEach(function (item) {
         // $('td[x=' + x +'][y=' + y + ']').css ({ "background-color": "red"});
-        $('td[x=' + item.x + '][y=' + item.y + ']').css({
-            backgroundImage: 'url(images/icons/diament.jpg)',
-            backgroundSize: '100%'
+        $('td[x=' + item.x + '][y=' + item.y + ']').addClass('diament')});
 
-    })});
-
-
-    //$('#game').css({
     $gameBoard.find('td').eq(4).addClass('player');
 
     // prevent arrow down to scroll page
@@ -69,22 +111,6 @@ function startGame () {
         }
     });
 
-    var moves = {
-        //move left
-        left: function (node) {
-            //console.log('posX', $(node).attr('x')); if buged check
-            return $(node).prev();
-        },
-        //move right
-        right: function (node) {
-            return $(node).next();
-        },
-        //move down
-        down: function (node) {
-            return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
-        }
-    };
-
     var $player = $gameBoard.find('.player');
 
     // move player - key binding
@@ -94,32 +120,60 @@ function startGame () {
 
         if (keyCode === 37) {
             if ($player.attr('x') > 0){
-            $player.removeClass('player').addClass('black');
+            $player.removeClass('player white').addClass('black');
             $player = moves.left($player);
-            $player.addClass('player');
+            $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 39) {
             if ($player.attr('x') < 9){
-            $player.removeClass('player').addClass('black');
+            $player.removeClass('player white').addClass('black');
             $player = moves.right($player);
-            $player.addClass('player');
+            $player.removeClass('diament').addClass('player');
             }
         }
         else if (keyCode === 40) {
             if ($player.attr('y') < 9){
-            $player.removeClass('player').addClass('black');
+            $player.removeClass('player white').addClass('black');
             $player = moves.down($player);
-            $player.addClass('player');
+            $player.removeClass('diament').addClass('white');
                 }
         }
+
+    checkDiamonds($player);
+
     });
 
-    $box.css({
-        height: "100vh"
-    });
+    function checkDiamonds(player){
 
+        diamenty = $('.diament').length;
+
+        if(diamenty){
+
+            if (player.attr('y')==9){
+                $('#score').html('PRZEGRALES !');
+                $(document).off('keyup');
+                myMusic.pause();
+                window.alert('Przegrałeś');
+                startGame().reload();
+            }
+            else{
+                $('#score').html('Pozostało '+diamenty+' diamentów');
+            return}
+        }
+        else if ($('.diamenty').length === 0){
+            $('#score').html('Wygraleś gratulacje');
+        $(document).off('keyup');
+        myMusic.pause();
+        window.alert('Wygrałeś :)');
+        startGame().reload();}
+    }
+
+    //$box.css({
+    //    height: "100vh"
+    //});
 }
+
 
 
 function createBoard(height, width) {
@@ -138,21 +192,3 @@ function createBoard(height, width) {
     return $board;
 }
 
-
-/*
- $('#game').append(createBoard(10, 10));
- $('#game').keydown(function (e) {
- switch (e.which) {
- case 37: //lewo
- console.log(left);
- case 38:
- console.log(up);
- case 39:
- console.log(right);
- case 40:
- console.log(down);
- default:
- return; // no control on rest keys
- }
- e.preventDefault(); //blocking keys
- });*/

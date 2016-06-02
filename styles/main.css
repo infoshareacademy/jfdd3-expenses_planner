@@ -147,6 +147,10 @@ main {
     color: darkred;
 }
 
+.hide{
+    opacity:0
+}
+
 /*TEAM*/
 
 #team {
@@ -337,4 +341,9 @@ a.backtotop:hover {
     font-weight: 500;
     vertical-align: middle;
     border: none;
+}
+
+.orange {
+    color: red;
+    font-size: larger;
 }
