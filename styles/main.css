@@ -136,6 +136,7 @@ main {
 .description_header {
     font-size: 23px;
     padding-bottom: 10px;
+    color: darkred;
 }
 
 .description_text {
@@ -143,6 +144,7 @@ main {
     text-align: center;
     font-family: 'Playfair Display', serif;
     padding: 10px;
+    color: darkred;
 }
 
 .hide{
@@ -152,7 +154,7 @@ main {
 /*TEAM*/
 
 #team {
-    padding-top: 180px;
+    padding-top: 15%;
     height: 100vh;
     margin-right: auto;
     margin-left: auto;
@@ -160,20 +162,66 @@ main {
     background-color: lightgrey;
 }
 
-.members {
-    width: 220px;
-    height: 550px;
-    margin: 0 20px;
-    display: inline-block;
+.slider {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.carousel {
+    text-align: center;
+    width: 700px;
+    height: 400px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    float:left;
+}
+
+.member {
+    width: 700px;
+    height: 400px;
     align-content: center;
     background-color: white;
     border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.visible {
+    display: inline-block ;
+}
+
+#left_scroll,
+#right_scroll {
+    color:darkred;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top:170px;
+    padding-top: 10px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
     float: left;
-    margin-left: 10px;
+    cursor: pointer;
+}
+
+#left_scroll {
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+#right_scroll {
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .avatar {
     padding-bottom: 20px;
+    height:100px;
+    width:100px;
 }
 
 /*FOOTER*/
