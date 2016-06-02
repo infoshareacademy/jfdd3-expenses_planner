@@ -1,9 +1,10 @@
 .cell{
-    border: 1px solid black;
+    border: none;
     width: 56px;
     height: 50px;
     border-collapse: collapse;
-    background-color: saddlebrown;
+    background-image: url(../images/dirt.png);
+    background-size: cover;
 }
 
 
@@ -15,18 +16,69 @@
     flex-flow: column;
 
 }
+.downmine {
+    background-image: url(../images/downminewithout.png);
+    background-size: cover;
+}
 
 .black {
-    background: #000;
+
+    background-image: url(../images/downminewithout.png);
+    background-size: cover;
 }
 
 
 .diament{
-    background-image: url(../images/icons/diament.jpg);
+    background-image: url(../images/diamentground.png);
     background-size: 100%;
 
 }
+
 .player {
-    background: #00c;
+    background-image: url(../images/player.png);
+    background-size: cover;
+}
+
+#score {
+ background-color: black;
+ width: 75vw;
+ text-align: center;
+ color: aliceblue;
+}
+
+.gamebox{
+ display: flex;
+ flex-flow: row;
+ justify-content: center;
+    width: 75vw;
+}
+
+.leftpadding {
+    color: white;
+    justify-content: center;
+    background-color: black;
+
+}
+
+.rightpadding {
+    width: auto;
+    background-color: black;
+}
+#gamefield{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+table {
+    width: 25vw;
+    border-spacing: 0;
+    border-color: saddlebrown;
+}
+
+.white {
+    background-image: url(../images/downmine.png);
+    background-size: cover;
 }
 
