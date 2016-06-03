@@ -17,38 +17,31 @@ var $box,
 
     bouldercoords = [],
     boulderavailableXs = [],
-    boulderavailableYs = [],
+
+    bouldermoves = {
+      down: function (node) {
+          var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
+          console.log(newPosition);
+          return newPosition.hasClass('cell') ? node : newPosition;
+      }
+    },
 
     moves = {
     //move left
     left: function (node) {
         var newPosition = $(node).prev();
-        console.log(newPosition);
-
         return newPosition.hasClass('white') ? node : newPosition;
-
-        //return $(node).prev();
     },
     //move right
     right: function (node) {
-
         var newPosition = $(node).next();
-        console.log(newPosition);
-
         return newPosition.hasClass('white') ? node : newPosition;
-
-        //return $(node).next();
     },
     //move down
     down: function (node) {
-        //if ($(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')').hasClass('white'); break );
-
         var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
-        console.log(newPosition);
-
+        console.log(newPosition)
         return newPosition.hasClass('white') ? node : newPosition;
-
-        //return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
     }
 };
 
@@ -147,6 +140,9 @@ function startGame () {
     });
 
     var player = $gameBoard.find('.player');
+    var boulders = $gameBoard.find('.white');
+    var space = $gameBoard.find('.black');
+
 
     // move player - key binding
     $(document).on('keyup', function (event) {
@@ -157,6 +153,13 @@ function startGame () {
             if (player.attr('x') > 0){
                 player.removeClass('player cell').addClass('black');
                 player = moves.left(player);
+
+                window.setTimeout(function(){
+                    boulders.each(function (){
+                        bouldermoves.down(this)
+                    });
+                }, 1000);
+
                 player.removeClass('diament').addClass('player');
             }
         }
@@ -164,6 +167,13 @@ function startGame () {
             if (player.attr('x') < 9){
                 player.removeClass('player cell').addClass('black');
                 player = moves.right(player);
+
+                window.setTimeout(function(){
+                    boulders.each(function (){
+                        bouldermoves.down(this)
+                    });
+                }, 1000);
+
                 player.removeClass('diament').addClass('player');
             }
         }
@@ -171,6 +181,11 @@ function startGame () {
             if (player.attr('y') < 9){
                 player.removeClass('player cell').addClass('black');
                 player = moves.down(player);
+                window.setTimeout(function(){
+                    boulders.each(function (){
+                        bouldermoves.down(this)
+                    });
+                }, 1000);
                 player.removeClass('diament').addClass('player');
             }
         }
