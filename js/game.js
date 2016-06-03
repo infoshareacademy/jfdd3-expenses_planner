@@ -140,8 +140,9 @@ function startGame () {
     });
 
     var player = $gameBoard.find('.player');
-    var boulders = $gameBoard.find('.white');
-    var space = $gameBoard.find('.black');
+
+    var playerout = function (){player.removeClass('player cell').addClass('black');};
+    var playerin = function (){player.removeClass('diament').addClass('player');};
 
 
     // move player - key binding
@@ -151,42 +152,46 @@ function startGame () {
 
         if (keyCode === 37) {
             if (player.attr('x') > 0){
-                player.removeClass('player cell').addClass('black');
+                playerout();
                 player = moves.left(player);
 
                 window.setTimeout(function(){
-                    boulders.each(function (){
+                    $gameBoard.find('.white').each(function (){
+
                         bouldermoves.down(this)
+
                     });
                 }, 1000);
 
-                player.removeClass('diament').addClass('player');
+                playerin();
             }
         }
         else if (keyCode === 39) {
             if (player.attr('x') < 9){
-                player.removeClass('player cell').addClass('black');
+                playerout();
                 player = moves.right(player);
 
                 window.setTimeout(function(){
-                    boulders.each(function (){
+                    $gameBoard.find('.white').each(function (){
                         bouldermoves.down(this)
                     });
                 }, 1000);
 
-                player.removeClass('diament').addClass('player');
+                playerin();
             }
         }
         else if (keyCode === 40) {
             if (player.attr('y') < 9){
-                player.removeClass('player cell').addClass('black');
+                playerout();
                 player = moves.down(player);
+
                 window.setTimeout(function(){
-                    boulders.each(function (){
+                    $gameBoard.find('.white').each(function (){
                         bouldermoves.down(this)
                     });
                 }, 1000);
-                player.removeClass('diament').addClass('player');
+
+               playerin();
             }
         }
 
