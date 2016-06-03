@@ -1,10 +1,11 @@
 $(document).ready(function () {
-    $(window).scroll(function () {
-        $('.hide').each(function (i) {
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            if (bottom_of_window > bottom_of_object) {
-                $(this).animate({'opacity': '1'}, 2000);
+    $(window).on('scroll load', function () {
+        $('.section').each(function (i) {
+            var top_of_object = $(this).offset().top;
+            var top_of_window = $(window).scrollTop() + 1;
+            console.log(top_of_window, top_of_object);
+            if (top_of_window > top_of_object) {
+                $(this).find('.hide').animate({'opacity': '1'}, 2000);
             }
         });
     });
