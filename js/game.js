@@ -143,23 +143,22 @@ function startGame () {
 
     var playerout = function (){player.removeClass('player cell').addClass('black');};
     var playerin = function (){player.removeClass('diament cell').addClass('player');};
-    var killbyboulder = function (){
-        if ($('.player.white').length == 1)
-        {
-            $('#score').html('Zabił ciebie głaz');
-            $(document).off('keyup');
-            myMusic.pause();
-            window.alert('Zabił ciebie głaz! Spróbuj jeszcze raz.');
-            startGame().reload();
-        }};
 
     function goBoulders() {
         window.setTimeout(function(){
             $gameBoard.find('.white').each(function () {
                 $(this).removeClass('white').addClass('black');
                 bouldermoves.down($(this)).removeClass('black').addClass('white');
+                if ($('.player.white').length == 1)
+                {
+                    $('#score').html('Zabił ciebie głaz');
+                    $(document).off('keyup');
+                    myMusic.pause();
+                    window.alert('Zabił ciebie głaz! Spróbuj jeszcze raz.');
+                    startGame().reload();
+                }
             });
-        }, 100);
+        }, 200);
     }
 
     // move player - key binding
@@ -176,8 +175,6 @@ function startGame () {
 
                 playerin();
 
-                killbyboulder();
-
             }
         }
         if (keyCode === 39) {
@@ -189,7 +186,6 @@ function startGame () {
 
                 playerin();
 
-                killbyboulder();
             }
         }
         else if (keyCode === 40) {
@@ -201,7 +197,6 @@ function startGame () {
 
                 playerin();
 
-                killbyboulder();
             }
         }
 
