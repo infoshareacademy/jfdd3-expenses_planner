@@ -77,8 +77,6 @@ function startGame () {
     availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
 
-
-
     //Create game view
     $('#gamefield').css({"height": "auto" });
     $('#score').css({"padding-top": "10vh"}, {"padding-bottom": "10vh"});
