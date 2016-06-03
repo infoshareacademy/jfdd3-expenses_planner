@@ -22,8 +22,14 @@ var $box,
       down: function (node) {
           var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
           console.log(newPosition);
-          return newPosition.hasClass('cell') ? node : newPosition;
+           return newPosition.hasClass('black') ? node : newPosition;
+
+          if (boulder) {
+              $gameBoard.find('.white').removeClass('white cell').addClass('black');
+              return
+          }
       }
+
     },
 
     moves = {
@@ -40,8 +46,9 @@ var $box,
     //move down
     down: function (node) {
         var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
-        console.log(newPosition)
+        console.log(newPosition);
         return newPosition.hasClass('white') ? node : newPosition;
+
     }
 };
 
@@ -121,9 +128,12 @@ function startGame () {
         bouldercoords.push({x: x, y: y});
     }
 
+
+
     console.log(bouldercoords);
     bouldercoords.forEach(function (item) {
-        $('td[x=' + item.x + '][y=' + item.y + ']').addClass('white')});
+        $('td[x=' + item.x + '][y=' + item.y + ']').addClass('white').removeClass('cell')});
+
 
     $gameBoard.find('td').eq(4).addClass('player');
 
@@ -158,8 +168,12 @@ function startGame () {
                 window.setTimeout(function(){
                     $gameBoard.find('.white').each(function (){
 
-                        bouldermoves.down(this)
 
+                        bouldermoves.down(this);
+
+                        if (this.bouldermoves) {
+                        this.find('.white').removeClass('white cell').addClass('black');
+                        this.find('.white').removeClass('black').addClass('white');}
                     });
                 }, 1000);
 
@@ -173,7 +187,11 @@ function startGame () {
 
                 window.setTimeout(function(){
                     $gameBoard.find('.white').each(function (){
-                        bouldermoves.down(this)
+
+
+                        bouldermoves.down(this);
+
+
                     });
                 }, 1000);
 
@@ -187,7 +205,11 @@ function startGame () {
 
                 window.setTimeout(function(){
                     $gameBoard.find('.white').each(function (){
-                        bouldermoves.down(this)
+
+
+                        bouldermoves.down(this);
+
+
                     });
                 }, 1000);
 
@@ -209,7 +231,7 @@ function startGame () {
                 $('#score').html('PRZEGRALES !');
                 $(document).off('keyup');
                 myMusic.pause();
-                window.alert('Przegrałeś');
+                window.alert('Przegrałeś Spróbuj jeszcze raz');
                 startGame().reload();
             }
             else{
@@ -220,7 +242,7 @@ function startGame () {
             $('#score').html('Wygraleś gratulacje');
         $(document).off('keyup');
         myMusic.pause();
-        window.alert('Wygrałeś :)');
+        window.alert('Wygrałeś :) Spróbuj jeszcze raz.');
         startGame().reload();}
     }
 
