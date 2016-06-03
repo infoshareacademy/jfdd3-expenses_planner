@@ -22,14 +22,8 @@ var $box,
       down: function (node) {
           var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
           console.log(newPosition);
-           return newPosition.hasClass('black') ? node : newPosition;
-
-          if (boulder) {
-              $gameBoard.find('.white').removeClass('white cell').addClass('black');
-              return
-          }
+           return newPosition.hasClass('cell') ? node : newPosition;
       }
-
     },
 
     moves = {
@@ -128,8 +122,6 @@ function startGame () {
         bouldercoords.push({x: x, y: y});
     }
 
-
-
     console.log(bouldercoords);
     bouldercoords.forEach(function (item) {
         $('td[x=' + item.x + '][y=' + item.y + ']').addClass('white').removeClass('cell')});
@@ -152,8 +144,25 @@ function startGame () {
     var player = $gameBoard.find('.player');
 
     var playerout = function (){player.removeClass('player cell').addClass('black');};
-    var playerin = function (){player.removeClass('diament').addClass('player');};
+    var playerin = function (){player.removeClass('diament cell').addClass('player');};
+    var killbyboulder = function (){
+        if ($('.player.white').length == 1)
+        {
+            $('#score').html('Zabił ciebie głaz');
+            $(document).off('keyup');
+            myMusic.pause();
+            window.alert('Zabił ciebie głaz! Spróbuj jeszcze raz.');
+            startGame().reload();
+        }};
 
+    function goBoulders() {
+        window.setTimeout(function(){
+            $gameBoard.find('.white').each(function () {
+                $(this).removeClass('white').addClass('black');
+                bouldermoves.down($(this)).removeClass('black').addClass('white');
+            });
+        }, 100);
+    }
 
     // move player - key binding
     $(document).on('keyup', function (event) {
@@ -165,37 +174,24 @@ function startGame () {
                 playerout();
                 player = moves.left(player);
 
-                window.setTimeout(function(){
-                    $gameBoard.find('.white').each(function (){
-
-
-                        bouldermoves.down(this);
-
-                        if (this.bouldermoves) {
-                        this.find('.white').removeClass('white cell').addClass('black');
-                        this.find('.white').removeClass('black').addClass('white');}
-                    });
-                }, 1000);
+                goBoulders();
 
                 playerin();
+
+                killbyboulder();
+
             }
         }
-        else if (keyCode === 39) {
+        if (keyCode === 39) {
             if (player.attr('x') < 9){
                 playerout();
                 player = moves.right(player);
 
-                window.setTimeout(function(){
-                    $gameBoard.find('.white').each(function (){
-
-
-                        bouldermoves.down(this);
-
-
-                    });
-                }, 1000);
+                goBoulders();
 
                 playerin();
+
+                killbyboulder();
             }
         }
         else if (keyCode === 40) {
@@ -203,17 +199,11 @@ function startGame () {
                 playerout();
                 player = moves.down(player);
 
-                window.setTimeout(function(){
-                    $gameBoard.find('.white').each(function (){
+                goBoulders();
 
+                playerin();
 
-                        bouldermoves.down(this);
-
-
-                    });
-                }, 1000);
-
-               playerin();
+                killbyboulder();
             }
         }
 
@@ -221,29 +211,39 @@ function startGame () {
 
     });
 
-    function checkDiamonds(player){
+    return console.log(player.attr('y'), $('.white').attr('y'), player.attr('x'),  $('.white').attr('x'))
+
+    function checkDiamonds(player) {
 
         diamenty = $('.diament').length;
 
-        if(diamenty){
+        if (diamenty) {
 
-            if (player.attr('y') == 9){
+            if (player.attr('y') == 9) {
                 $('#score').html('PRZEGRALES !');
                 $(document).off('keyup');
                 myMusic.pause();
                 window.alert('Przegrałeś Spróbuj jeszcze raz');
                 startGame().reload();
             }
-            else{
-                $('#score').html('Pozostało '+diamenty+' diamentów');
-            return}
+
+
+            else {
+                $('#score').html('Pozostało ' + diamenty + ' diamentów');
+            }
+
         }
-        else if ($('.diamenty').length === 0){
+
+
+        else if ($('.diamenty').length === 0) {
             $('#score').html('Wygraleś gratulacje');
-        $(document).off('keyup');
-        myMusic.pause();
-        window.alert('Wygrałeś :) Spróbuj jeszcze raz.');
-        startGame().reload();}
+            $(document).off('keyup');
+            myMusic.pause();
+            window.alert('Wygrałeś :) Spróbuj jeszcze raz.');
+            startGame().reload();
+        }
+
+
     }
 
 }
