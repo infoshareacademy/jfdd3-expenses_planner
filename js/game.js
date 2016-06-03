@@ -10,11 +10,9 @@ var $box,
     $gameBoard,
     diamenty,
     $form = $("#email"),
-
     coords = [],
     availableXs = [],
     availableYs = [],
-
     bouldercoords = [],
     boulderavailableXs = [],
     boulderavailableYs = [],
