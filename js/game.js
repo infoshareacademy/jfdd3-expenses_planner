@@ -15,38 +15,32 @@ var $box,
     availableYs = [],
     bouldercoords = [],
     boulderavailableXs = [],
-    boulderavailableYs = [],
+
+    bouldermoves = {
+      down: function (node) {
+          var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
+          console.log(newPosition);
+           return newPosition.hasClass('cell') ? node : newPosition;
+      }
+    },
 
     moves = {
     //move left
     left: function (node) {
         var newPosition = $(node).prev();
-        console.log(newPosition);
-
         return newPosition.hasClass('white') ? node : newPosition;
-
-        //return $(node).prev();
     },
     //move right
     right: function (node) {
-
         var newPosition = $(node).next();
-        console.log(newPosition);
-
         return newPosition.hasClass('white') ? node : newPosition;
-
-        //return $(node).next();
     },
     //move down
     down: function (node) {
-        //if ($(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')').hasClass('white'); break );
-
         var newPosition = $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
         console.log(newPosition);
-
         return newPosition.hasClass('white') ? node : newPosition;
 
-        //return $(node).parent().next().find(':nth-child('+ ($(node).index() +1) +')');
     }
 };
 
@@ -75,17 +69,18 @@ function startGame () {
     availableXs = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
     availableYs = [0,1, 2, 3, 4, 5, 6, 7, 8];
 
-
-
     //Create game view
     $('#gamefield').css({"height": "auto" });
     $('#score').css({"padding-top": "10vh"}, {"padding-bottom": "10vh"});
+    $('#score').css( {"padding-bottom": "5vh"});
     $('.gamefooter').css({"padding-bottom": "10vh" });
     $('.leftpadding').css({"width": "20vw" });
     $('.rightpadding').css({"width": "20vw" });
     $('#score').html('<p>Zbierz wszystkie diamenty</p>');
-    $('.leftpadding').html('<p>Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty. Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.</p>');
-
+    $('.leftpadding').html('<p>Dziękujemy za zainteresowanie naszą aplikacją. W zamian proponujemy sprawdzić się w naszej grze. </p>' +
+        '<p> Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek. Sterowanie odbywa się za pomocą strzałek. Powodzenia!</p> ' +
+        '<p>Zmieniłbym na Uważaj także na głazy, które mogą Cię przygnieść. W ich pobliżu poruszaj się powoli, a pod nimi przeskakuj szybko.</p> ');
+    //$('.rightpadding').html('<p>Jeżeli cokolwiek ci nie wyjdzie to pamiętaj, że możesz zawsze odświeżyć plansze przyciskając spacje. </p>');
 //
 // var x = Math.round(Math.random()*10);
 //     var y = Math.round(Math.random()*10);
@@ -130,7 +125,8 @@ function startGame () {
 
     console.log(bouldercoords);
     bouldercoords.forEach(function (item) {
-        $('td[x=' + item.x + '][y=' + item.y + ']').addClass('white')});
+        $('td[x=' + item.x + '][y=' + item.y + ']').addClass('white').removeClass('cell')});
+
 
     $gameBoard.find('td').eq(4).addClass('player');
 
@@ -144,9 +140,32 @@ function startGame () {
         else if (event.which === 40) {
             return false;
         }
+        else if (event.which === 32) {
+            return false;
+        }
     });
 
     var player = $gameBoard.find('.player');
+
+    var playerout = function (){player.removeClass('player cell').addClass('black');};
+    var playerin = function (){player.removeClass('diament cell').addClass('player');};
+
+    function goBoulders() {
+        window.setTimeout(function(){
+            $gameBoard.find('.white').each(function () {
+                $(this).removeClass('white').addClass('black');
+                bouldermoves.down($(this)).removeClass('black').addClass('white');
+                if ($('.player.white').length == 1)
+                {
+                    $('#score').html('Zabił ciebie głaz');
+                    $(document).off('keyup');
+                    myMusic.pause();
+                    window.alert('Zabił ciebie głaz! Spróbuj jeszcze raz.');
+                    startGame();
+                }
+            });
+        }, 200);
+    }
 
     // move player - key binding
     $(document).on('keyup', function (event) {
@@ -155,53 +174,80 @@ function startGame () {
 
         if (keyCode === 37) {
             if (player.attr('x') > 0){
-                player.removeClass('player cell').addClass('black');
+                playerout();
                 player = moves.left(player);
-                player.removeClass('diament').addClass('player');
+
+                goBoulders();
+
+                playerin();
+
             }
         }
-        else if (keyCode === 39) {
+        if (keyCode === 39) {
             if (player.attr('x') < 9){
-                player.removeClass('player cell').addClass('black');
+                playerout();
                 player = moves.right(player);
-                player.removeClass('diament').addClass('player');
+
+                goBoulders();
+
+                playerin();
+
             }
         }
         else if (keyCode === 40) {
             if (player.attr('y') < 9){
-                player.removeClass('player cell').addClass('black');
+                playerout();
                 player = moves.down(player);
-                player.removeClass('diament').addClass('player');
+
+                goBoulders();
+
+                playerin();
+
             }
         }
+        //else if (keyCode === 32) {
+        //    myMusic.pause();
+        //    window.alert('Restartujesz gre.');
+        //    startGame();
+        //}
 
     checkDiamonds(player);
 
     });
 
-    function checkDiamonds(player){
+    return console.log(player.attr('y'), $('.white').attr('y'), player.attr('x'),  $('.white').attr('x'))
+
+    function checkDiamonds(player) {
 
         diamenty = $('.diament').length;
 
-        if(diamenty){
+        if (diamenty) {
 
-            if (player.attr('y') == 9){
+            if (player.attr('y') == 9) {
                 $('#score').html('PRZEGRALES !');
                 $(document).off('keyup');
                 myMusic.pause();
-                window.alert('Przegrałeś');
-                startGame().reload();
+                window.alert('Przegrałeś Spróbuj jeszcze raz');
+                startGame();
             }
-            else{
-                $('#score').html('Pozostało '+diamenty+' diamentów');
-            return}
+
+
+            else {
+                $('#score').html('Pozostało ' + diamenty + ' diamentów');
+            }
+
         }
-        else if ($('.diamenty').length === 0){
+
+
+        else if ($('.diamenty').length === 0) {
             $('#score').html('Wygraleś gratulacje');
-        $(document).off('keyup');
-        myMusic.pause();
-        window.alert('Wygrałeś :)');
-        startGame().reload();}
+            $(document).off('keyup');
+            myMusic.pause();
+            window.alert('Wygrałeś :) Spróbuj jeszcze raz.');
+            startGame();
+        }
+
+
     }
 
 }

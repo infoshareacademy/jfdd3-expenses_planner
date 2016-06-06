@@ -17,12 +17,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-flow: column;
         background-color: black;
     }
 
+    .leftpadding p {
+        padding-top: 1vh;
+    }
+
     .rightpadding {
-        width: auto;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
         background-color: black;
+    }
+
+    .rightpadding p {
+        padding-left: 1vw;
     }
 
     #gamefield{
@@ -73,11 +86,6 @@
         background-size: cover;
     }
 
-    .downmine {
-        background-image: url(../images/game/downminewithout.png);
-        background-size: cover;
-    }
-
     .black {
         background-color: black;
     }
@@ -94,6 +102,6 @@
     }
 
     .white {
-        background-image: url(../images/game/boulder.png);
+        background-image: url(../images/game/rock.png);
         background-size: cover;
     }
