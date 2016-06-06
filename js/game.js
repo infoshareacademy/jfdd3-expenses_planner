@@ -76,7 +76,9 @@ function startGame () {
     $('.leftpadding').css({"width": "20vw" });
     $('.rightpadding').css({"width": "20vw" });
     $('#score').html('<p>Zbierz wszystkie diamenty</p>');
-    $('.leftpadding').html('<p>Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty. Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.</p>');
+    $('.leftpadding').html('<p>Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty.</p>' +
+        '<p> Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.</p> ' +
+        '<p>Uważaj także na głazy mogą ciebie przygnieść w ich okolicy poruszaj się powoli, a pod nimi przeskakuj szybko.</p> ');
 
 //
 // var x = Math.round(Math.random()*10);
