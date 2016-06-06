@@ -347,3 +347,7 @@ a.backtotop:hover {
     color: red;
     font-size: larger;
 }
+
+.orange:hover {
+    color: red;
+}
