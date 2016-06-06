@@ -79,7 +79,7 @@ function startGame () {
     $('#score').html('<p>Zbierz wszystkie diamenty</p>');
     $('.leftpadding').html('<p>Dziękujemy za zainteresowanie naszą aplikacją. W zamian proponujemy sprawdzić się w naszej grze. </p>' +
         '<p> Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek. Sterowanie odbywa się za pomocą strzałek. Powodzenia!</p> ' +
-        '<p>Zmieniłbym na Uważaj także na głazy, które mogą Cię przygnieść. W ich pobliżu poruszaj się powoli, a pod nimi przeskakuj szybko.</p> ');
+        '<p>Uważaj także na głazy, które mogą Cię przygnieść. W ich pobliżu poruszaj się powoli, a pod nimi przeskakuj szybko.</p> ');
     //$('.rightpadding').html('<p>Jeżeli cokolwiek ci nie wyjdzie to pamiętaj, że możesz zawsze odświeżyć plansze przyciskając spacje. </p>');
 //
 // var x = Math.round(Math.random()*10);
