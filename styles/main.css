@@ -183,6 +183,8 @@ main {
     align-content: center;
     background-color: white;
     border-radius: 10px;
+    border: 2px solid #cc0000;
+    box-sizing: border-box;
     overflow: hidden;
     display: none;
 }
