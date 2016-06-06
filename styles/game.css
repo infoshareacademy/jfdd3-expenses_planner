@@ -21,6 +21,10 @@
         background-color: black;
     }
 
+    .leftpadding p {
+        padding-top: 1vh;
+    }
+
     .rightpadding {
         width: auto;
         background-color: black;
