@@ -72,7 +72,7 @@ function startGame () {
     //Create game view
     $('#gamefield').css({"height": "auto" });
     $('#score').css({"padding-top": "10vh"}, {"padding-bottom": "10vh"});
-    $('#score').css( {"padding-bottom": "10vh"});
+    $('#score').css( {"padding-bottom": "5vh"});
     $('.gamefooter').css({"padding-bottom": "10vh" });
     $('.leftpadding').css({"width": "20vw" });
     $('.rightpadding').css({"width": "20vw" });
