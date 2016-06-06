@@ -77,10 +77,10 @@ function startGame () {
     $('.leftpadding').css({"width": "20vw" });
     $('.rightpadding').css({"width": "20vw" });
     $('#score').html('<p>Zbierz wszystkie diamenty</p>');
-    $('.leftpadding').html('<p>Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty.</p>' +
-        '<p> Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.</p> ' +
-        '<p>Uważaj także na głazy mogą ciebie przygnieść w ich okolicy poruszaj się powoli, a pod nimi przeskakuj szybko.</p> ');
-    $('.rightpadding').html('<p>Jeżeli cokolwiek ci nie wyjdzie to pamiętaj, że możesz zawsze odświeżyć plansze przyciskając spacje. </p>');
+    $('.leftpadding').html('<p>Dziękujemy za zainteresowanie naszą aplikacją. W zamian proponujemy sprawdzić się w naszej grze. </p>' +
+        '<p> Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek. Sterowanie odbywa się za pomocą strzałek. Powodzenia!</p> ' +
+        '<p>Zmieniłbym na Uważaj także na głazy, które mogą Cię przygnieść. W ich pobliżu poruszaj się powoli, a pod nimi przeskakuj szybko.</p> ');
+    //$('.rightpadding').html('<p>Jeżeli cokolwiek ci nie wyjdzie to pamiętaj, że możesz zawsze odświeżyć plansze przyciskając spacje. </p>');
 //
 // var x = Math.round(Math.random()*10);
 //     var y = Math.round(Math.random()*10);
@@ -161,7 +161,7 @@ function startGame () {
                     $(document).off('keyup');
                     myMusic.pause();
                     window.alert('Zabił ciebie głaz! Spróbuj jeszcze raz.');
-                    startGame().reload();
+                    startGame();
                 }
             });
         }, 200);
@@ -205,9 +205,11 @@ function startGame () {
 
             }
         }
-        else if (keyCode === 32) {
-            startGame().reload();
-        }
+        //else if (keyCode === 32) {
+        //    myMusic.pause();
+        //    window.alert('Restartujesz gre.');
+        //    startGame();
+        //}
 
     checkDiamonds(player);
 
@@ -226,7 +228,7 @@ function startGame () {
                 $(document).off('keyup');
                 myMusic.pause();
                 window.alert('Przegrałeś Spróbuj jeszcze raz');
-                startGame().reload();
+                startGame();
             }
 
 
@@ -242,7 +244,7 @@ function startGame () {
             $(document).off('keyup');
             myMusic.pause();
             window.alert('Wygrałeś :) Spróbuj jeszcze raz.');
-            startGame().reload();
+            startGame();
         }
 
 
