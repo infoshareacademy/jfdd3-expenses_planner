@@ -16,7 +16,7 @@ $(window).scroll(function () {
     var $menuItems = $('header a[href^="#"]');
     $menuItems.removeClass('orange');
     var viewportTop = $(this).scrollTop();
-    var teamOffset = $('#team').offset();
+    //var teamOffset = $('#team').offset();
 
     $menuItems.each(function (index, menuItem) {
         var elementsId = $(menuItem).attr('href');
