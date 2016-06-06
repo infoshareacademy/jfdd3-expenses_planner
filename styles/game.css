@@ -3,7 +3,6 @@
         background-color: black;
         text-align: center;
         color: aliceblue;
-        padding-bottom: 5vh;
     }
 
     .gamebox{
@@ -27,8 +26,16 @@
     }
 
     .rightpadding {
-        width: auto;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
         background-color: black;
+    }
+
+    .rightpadding p {
+        padding-left: 1vw;
     }
 
     #gamefield{

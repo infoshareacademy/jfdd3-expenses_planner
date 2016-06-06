@@ -72,6 +72,7 @@ function startGame () {
     //Create game view
     $('#gamefield').css({"height": "auto" });
     $('#score').css({"padding-top": "10vh"}, {"padding-bottom": "10vh"});
+    $('#score').css( {"padding-bottom": "10vh"});
     $('.gamefooter').css({"padding-bottom": "10vh" });
     $('.leftpadding').css({"width": "20vw" });
     $('.rightpadding').css({"width": "20vw" });
@@ -79,7 +80,7 @@ function startGame () {
     $('.leftpadding').html('<p>Dziękujemy za adres email, masz teraz szansę sprawdzić się w grze. Zbierz wszystkie diamenty.</p>' +
         '<p> Aby utrudnić możesz ruszać się tylko w dół i na boki przy użyciu strzałek.</p> ' +
         '<p>Uważaj także na głazy mogą ciebie przygnieść w ich okolicy poruszaj się powoli, a pod nimi przeskakuj szybko.</p> ');
-
+    $('.rightpadding').html('<p>Jeżeli cokolwiek ci nie wyjdzie to pamiętaj, że możesz zawsze odświeżyć plansze przyciskając spacje. </p>');
 //
 // var x = Math.round(Math.random()*10);
 //     var y = Math.round(Math.random()*10);
@@ -137,6 +138,9 @@ function startGame () {
         }
         //prevent going down
         else if (event.which === 40) {
+            return false;
+        }
+        else if (event.which === 32) {
             return false;
         }
     });
@@ -200,6 +204,9 @@ function startGame () {
                 playerin();
 
             }
+        }
+        else if (keyCode === 32) {
+            startGame().reload();
         }
 
     checkDiamonds(player);
