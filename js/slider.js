@@ -18,7 +18,7 @@ $('#right_scroll').click(function (){
 
 setInterval(function(){
     $('#right_scroll').click();
-}, 3000);
+}, 5000);
 
 
 
