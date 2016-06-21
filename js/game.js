@@ -160,8 +160,7 @@ function startGame () {
                     $('#score').html('Zabił ciebie głaz');
                     $(document).off('keyup');
                     myMusic.pause();
-                    window.alert('Zabił ciebie głaz! Spróbuj jeszcze raz.');
-                    startGame();
+                    window.setTimeout(startGame(), 70000);
                 }
             });
         }, 200);
@@ -227,8 +226,7 @@ function startGame () {
                 $('#score').html('PRZEGRALES !');
                 $(document).off('keyup');
                 myMusic.pause();
-                window.alert('Przegrałeś Spróbuj jeszcze raz');
-                startGame();
+                window.setTimeout(startGame(), 20000);
             }
 
 
@@ -243,8 +241,7 @@ function startGame () {
             $('#score').html('Wygraleś gratulacje');
             $(document).off('keyup');
             myMusic.pause();
-            window.alert('Wygrałeś :) Spróbuj jeszcze raz.');
-            startGame();
+            window.setTimeout(startGame(), 20000);
         }
 
 
