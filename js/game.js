@@ -44,7 +44,21 @@ var $box,
     }
 };
 
-$('#sendForm').on('click', startGame);
+
+$('#sendForm').click(function(event) {
+    event.preventDefault();
+    console.log('submit');
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
+    if (!isEmail($('#emil').val())) {
+        $('#emil').val('Podaj adres e-mail, aby zagrać!');
+    } else {
+        startGame()
+    }
+});
 
 
 function startGame () {

@@ -20,5 +20,3 @@ setInterval(function(){
     $('#right_scroll').click();
 }, 5000);
 
-
-
